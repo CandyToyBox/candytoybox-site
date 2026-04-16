@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+:root {
+  --void: #08090f;
+  --void-mid: #0d1321;
+  --void-light: #161b2e;
+  --green: #95fe7c;
+  --green-dim: #6bc456;
+  --offwhite: #f8f8f0;
+  --muted: #8a8fa8;
+  --border: rgba(149, 254, 124, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--void);
+  color: var(--offwhite);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Selection */
+::selection {
+  background: rgba(149, 254, 124, 0.25);
+  color: #fff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--void);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(149, 254, 124, 0.3);
+  border-radius: 2px;
+}
+
+/* Focus */
+:focus-visible {
+  outline: 1px solid rgba(149, 254, 124, 0.6);
+  outline-offset: 3px;
+}
+
+/* Utility: Green glow text */
+.text-glow {
+  text-shadow: 0 0 30px rgba(149, 254, 124, 0.4);
+}
+
+/* Noise overlay via pseudo */
+.noise::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.04;
+}
+
+/* Grid background */
+.grid-bg {
+  background-image: linear-gradient(rgba(149, 254, 124, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(149, 254, 124, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Gradient top glow */
+.radial-green {
+  background: radial-gradient(ellipse 80% 40% at 50% 0%, rgba(149, 254, 124, 0.07) 0%, transparent 70%);
+}
+
+/* Ticker scroll */
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-ticker {
+  animation: ticker 30s linear infinite;
+}
+
+/* Fade up */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Pulse green dot */
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+.animate-pulse-dot {
+  animation: pulseDot 2s ease-in-out infinite;
+}
+
+/* Card shine hover */
+.card-shine {
+  position: relative;
+  overflow: hidden;
+}
+.card-shine::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(149, 254, 124, 0.04), transparent);
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
+.card-shine:hover::before {
+  left: 150%;
+}
