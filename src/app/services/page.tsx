@@ -53,7 +53,6 @@ const hourly = [
     unit: "per hour",
     what: "Web3 landscape, AI tools, events, community building, business model, marketing angles. You bring the problem. I come with options, references, and a direction — not generic advice.",
     format: "Video call. Structured intake form required before booking.",
-    book: true,
   },
   {
     name: "Build Review",
@@ -61,7 +60,6 @@ const hourly = [
     unit: "per hour",
     what: "Share your screen or submit a repo/staging link. I stress test it and tell you exactly what breaks, what's confusing, and what will kill your launch. Real feedback — not nice feedback.",
     format: "Async OR video call. You choose.",
-    book: true,
   },
   {
     name: "Idea Session",
@@ -69,7 +67,6 @@ const hourly = [
     unit: "per hour",
     what: "Pure ideation. You describe the problem or where you're stuck. I generate — frameworks, pivots, features, angles you haven't seen because you're too close to it.",
     format: "Video call. No prep required.",
-    book: true,
   },
 ];
 
@@ -96,8 +93,15 @@ const projectBased = [
 
 export default function Services() {
   return (
-    <div className="min-h-screen pt-24 pb-32 px-6">
-      <div className="max-w-6xl mx-auto">
+    <div className="relative min-h-screen pt-24 pb-32 px-6 overflow-x-hidden">
+      {/* Noise texture */}
+      <div className="noise" />
+
+      {/* Ambient glow */}
+      <div className="absolute top-24 right-0 w-[500px] h-[400px] rounded-full bg-[#95fe7c]/4 blur-3xl pointer-events-none" />
+      <div className="absolute top-80 left-0 w-72 h-72 rounded-full bg-[#95fe7c]/3 blur-3xl pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto relative">
 
         {/* ── HEADER ──────────────────────────────────────── */}
         <motion.div
@@ -106,11 +110,9 @@ export default function Services() {
           transition={{ duration: 0.7 }}
           className="mb-20"
         >
-          <span className="font-rajdhani font-bold text-xs uppercase tracking-widest text-[#95fe7c] block mb-4">
-            Services
-          </span>
+          <span className="label block mb-4">Services</span>
           <h1
-            className="font-rajdhani font-bold text-[#f8f8f0] leading-tight mb-4"
+            className="font-rajdhani font-bold text-[#f8f8f0] leading-tight mb-4 break-words"
             style={{ fontSize: "clamp(2.5rem, 7vw, 6rem)" }}
           >
             WORK WITH ME
@@ -130,10 +132,8 @@ export default function Services() {
             className="mb-10"
           >
             <div className="flex items-center gap-3 mb-2">
-              <span className="font-rajdhani font-bold text-xs uppercase tracking-widest text-[#95fe7c]">
-                Tier 1
-              </span>
-              <span className="h-px flex-1 bg-[rgba(149,254,124,0.1)]" />
+              <span className="label">Tier 1</span>
+              <span className="h-px flex-1 bg-gradient-to-r from-[rgba(149,254,124,0.3)] to-transparent" />
             </div>
             <h2
               className="font-rajdhani font-bold text-[#f8f8f0] leading-tight"
@@ -154,7 +154,7 @@ export default function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="p-6 md:p-8 border border-[rgba(149,254,124,0.1)] bg-[#0d1321]/40 hover:border-[rgba(149,254,124,0.2)] transition-all card-shine"
+                className="card card-corner p-6 md:p-8"
               >
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-5">
                   <div>
@@ -163,8 +163,8 @@ export default function Services() {
                       {s.turnaround} · Async · No call
                     </span>
                   </div>
-                  <div className="flex items-center gap-4">
-                    <span className="font-rajdhani font-bold text-[#95fe7c] text-2xl">{s.price}</span>
+                  <div className="flex items-center gap-4 shrink-0">
+                    <span className="font-rajdhani font-bold text-[#95fe7c] text-2xl text-glow-sm">{s.price}</span>
                     <Link
                       href="/contact"
                       className="font-rajdhani font-bold text-sm uppercase tracking-wider px-5 py-2 bg-[#95fe7c] text-[#08090f] hover:opacity-90 transition-opacity whitespace-nowrap"
@@ -203,10 +203,8 @@ export default function Services() {
             className="mb-10"
           >
             <div className="flex items-center gap-3 mb-2">
-              <span className="font-rajdhani font-bold text-xs uppercase tracking-widest text-[#95fe7c]">
-                Tier 2
-              </span>
-              <span className="h-px flex-1 bg-[rgba(149,254,124,0.1)]" />
+              <span className="label">Tier 2</span>
+              <span className="h-px flex-1 bg-gradient-to-r from-[rgba(149,254,124,0.3)] to-transparent" />
             </div>
             <h2
               className="font-rajdhani font-bold text-[#f8f8f0] leading-tight"
@@ -227,12 +225,12 @@ export default function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="flex flex-col p-6 border border-[rgba(149,254,124,0.1)] bg-[#0d1321]/40 hover:border-[rgba(149,254,124,0.2)] transition-all card-shine"
+                className="card card-corner flex flex-col p-6"
               >
                 <div className="mb-4">
                   <h3 className="font-rajdhani font-bold text-[#f8f8f0] text-xl mb-1">{s.name}</h3>
                   <div className="flex items-baseline gap-1">
-                    <span className="font-rajdhani font-bold text-[#95fe7c] text-2xl">{s.price}</span>
+                    <span className="font-rajdhani font-bold text-[#95fe7c] text-2xl text-glow-sm">{s.price}</span>
                     <span className="text-xs font-inter text-[#4a4f62]">{s.unit}</span>
                   </div>
                 </div>
@@ -262,10 +260,8 @@ export default function Services() {
             className="mb-10"
           >
             <div className="flex items-center gap-3 mb-2">
-              <span className="font-rajdhani font-bold text-xs uppercase tracking-widest text-[#95fe7c]">
-                Tier 3
-              </span>
-              <span className="h-px flex-1 bg-[rgba(149,254,124,0.1)]" />
+              <span className="label">Tier 3</span>
+              <span className="h-px flex-1 bg-gradient-to-r from-[rgba(149,254,124,0.3)] to-transparent" />
             </div>
             <h2
               className="font-rajdhani font-bold text-[#f8f8f0] leading-tight"
@@ -286,14 +282,12 @@ export default function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="p-6 md:p-8 border border-[rgba(149,254,124,0.1)] bg-[#0d1321]/40 hover:border-[rgba(149,254,124,0.2)] transition-all card-shine"
+                className="card card-corner p-6 md:p-8"
               >
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-5">
-                  <div>
-                    <h3 className="font-rajdhani font-bold text-[#f8f8f0] text-xl">{s.name}</h3>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <span className="font-rajdhani font-bold text-[#95fe7c] text-xl whitespace-nowrap">{s.price}</span>
+                  <h3 className="font-rajdhani font-bold text-[#f8f8f0] text-xl">{s.name}</h3>
+                  <div className="flex items-center gap-4 shrink-0">
+                    <span className="font-rajdhani font-bold text-[#95fe7c] text-xl whitespace-nowrap text-glow-sm">{s.price}</span>
                     <Link
                       href="/contact"
                       className="font-rajdhani font-bold text-sm uppercase tracking-wider px-5 py-2 border border-[rgba(149,254,124,0.3)] text-[#f8f8f0] hover:border-[#95fe7c] hover:text-[#95fe7c] transition-colors whitespace-nowrap"
@@ -323,31 +317,36 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-24 p-8 border border-[rgba(149,254,124,0.2)] bg-[#0d1321]/60"
+          className="mb-24"
         >
-          <div className="flex items-center gap-3 mb-6">
-            <span className="font-rajdhani font-bold text-xs uppercase tracking-widest text-[#95fe7c]">
-              Agentic Economy
-            </span>
-            <span className="h-px flex-1 bg-[rgba(149,254,124,0.1)]" />
-          </div>
-          <h2
-            className="font-rajdhani font-bold text-[#f8f8f0] leading-tight mb-3"
-            style={{ fontSize: "clamp(1.5rem, 3vw, 2.5rem)" }}
-          >
-            Agent-to-Agent Contact
-          </h2>
-          <p className="text-[#8a8fa8] font-inter text-sm leading-relaxed mb-6 max-w-2xl">
-            AI agents can pay USDC via x402 protocol to route qualified opportunities to me — no human needed to initiate contact. The endpoint accepts a structured brief (problem, budget, timeline). If it qualifies, the agent receives my intake form link.
-          </p>
-          <div className="flex flex-wrap items-center gap-6">
-            <div>
-              <span className="font-rajdhani font-bold text-[#95fe7c] text-xl">$0.50 USDC</span>
-              <span className="text-xs font-inter text-[#4a4f62] ml-2">per request · Base mainnet · x402</span>
+          <div className="card card-corner box-glow p-8 border-[rgba(149,254,124,0.25)]" style={{ borderColor: "rgba(149,254,124,0.2)" }}>
+            <div className="flex items-center gap-3 mb-6">
+              <span className="label">Agentic Economy</span>
+              <span className="h-px flex-1 bg-gradient-to-r from-[rgba(149,254,124,0.4)] to-transparent" />
+              {/* Pulse indicator */}
+              <span className="flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#95fe7c] animate-pulse-dot" />
+                <span className="text-[10px] font-inter text-[#95fe7c] uppercase tracking-widest">Live</span>
+              </span>
             </div>
-            <code className="text-xs font-inter text-[#4a4f62] bg-[#08090f] px-4 py-2 border border-[rgba(149,254,124,0.08)]">
-              POST /api/contact-x402
-            </code>
+            <h2
+              className="font-rajdhani font-bold text-[#f8f8f0] leading-tight mb-3"
+              style={{ fontSize: "clamp(1.5rem, 3vw, 2.5rem)" }}
+            >
+              Agent-to-Agent Contact
+            </h2>
+            <p className="text-[#8a8fa8] font-inter text-sm leading-relaxed mb-6 max-w-2xl">
+              AI agents can pay USDC via x402 protocol to route qualified opportunities to me — no human needed to initiate contact. The endpoint accepts a structured brief (problem, budget, timeline). If it qualifies, the agent receives my intake form link.
+            </p>
+            <div className="flex flex-wrap items-center gap-6">
+              <div>
+                <span className="font-rajdhani font-bold text-[#95fe7c] text-xl text-glow-sm">$0.50 USDC</span>
+                <span className="text-xs font-inter text-[#4a4f62] ml-2">per request · Base mainnet · x402</span>
+              </div>
+              <code className="text-xs font-inter text-[#95fe7c]/60 bg-[#08090f] px-4 py-2 border border-[rgba(149,254,124,0.12)]">
+                POST /api/contact-x402
+              </code>
+            </div>
           </div>
         </motion.div>
 
@@ -357,7 +356,7 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-16 p-8 border border-[rgba(149,254,124,0.08)] bg-[#0d1321]/20"
+          className="mb-16 card p-8"
         >
           <h3 className="font-rajdhani font-bold text-[#f8f8f0] text-xl mb-4">On pricing</h3>
           <p className="text-[#8a8fa8] font-inter text-sm leading-relaxed max-w-3xl">

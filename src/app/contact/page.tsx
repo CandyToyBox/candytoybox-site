@@ -40,7 +40,6 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // For now, open email with prefilled content
     const subject = encodeURIComponent(`Inquiry: ${form.service || "Work Together"}`);
     const body = encodeURIComponent(
       `Name: ${form.name}\nEmail: ${form.email}\nService: ${form.service}\nBudget: ${form.budget}\nTimeline: ${form.timeline}\n\nMessage:\n${form.message}`
@@ -50,8 +49,15 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen pt-24 pb-32 px-6">
-      <div className="max-w-6xl mx-auto">
+    <div className="relative min-h-screen pt-24 pb-32 px-6 overflow-x-hidden">
+      {/* Noise texture */}
+      <div className="noise" />
+
+      {/* Ambient glow */}
+      <div className="absolute top-24 right-1/4 w-[400px] h-[400px] rounded-full bg-[#95fe7c]/4 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-32 left-0 w-72 h-72 rounded-full bg-[#95fe7c]/3 blur-3xl pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto relative">
 
         {/* ── HEADER ──────────────────────────────────────── */}
         <motion.div
@@ -60,11 +66,9 @@ export default function Contact() {
           transition={{ duration: 0.7 }}
           className="mb-20"
         >
-          <span className="font-rajdhani font-bold text-xs uppercase tracking-widest text-[#95fe7c] block mb-4">
-            Contact
-          </span>
+          <span className="label block mb-4">Contact</span>
           <h1
-            className="font-rajdhani font-bold text-[#f8f8f0] leading-tight mb-4"
+            className="font-rajdhani font-bold text-[#f8f8f0] leading-tight mb-4 break-words"
             style={{ fontSize: "clamp(2.5rem, 7vw, 6rem)" }}
           >
             LET&apos;S BUILD
@@ -77,20 +81,19 @@ export default function Contact() {
         <div className="grid md:grid-cols-[1fr_1.5fr] gap-12 items-start">
 
           {/* ── LEFT: SOCIALS + INFO ──────────────────────── */}
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-5">
 
             {/* Currently available */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="p-6 border border-[rgba(149,254,124,0.2)] bg-[#0d1321]/60"
+              className="card card-corner box-glow p-6"
+              style={{ borderColor: "rgba(149,254,124,0.2)" }}
             >
               <div className="flex items-center gap-2 mb-3">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#95fe7c] animate-pulse-dot" />
-                <span className="font-rajdhani font-bold text-xs uppercase tracking-widest text-[#95fe7c]">
-                  Status
-                </span>
+                <span className="label">Status</span>
               </div>
               <p className="font-rajdhani font-bold text-[#f8f8f0] text-lg mb-1">Available for new work</p>
               <p className="text-xs font-inter text-[#8a8fa8]">
@@ -104,29 +107,30 @@ export default function Contact() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <span className="font-rajdhani font-bold text-xs uppercase tracking-widest text-[#95fe7c] block mb-4">
-                Find Me
-              </span>
+              <span className="label block mb-3">Find Me</span>
               <div className="flex flex-col gap-2">
-                {socials.map((s) => (
-                  <a
+                {socials.map((s, i) => (
+                  <motion.a
                     key={s.name}
                     href={s.href}
                     target={s.href.startsWith("mailto") ? "_self" : "_blank"}
                     rel="noopener noreferrer"
-                    className="group flex items-center justify-between p-4 border border-[rgba(149,254,124,0.08)] bg-[#0d1321]/30 hover:border-[rgba(149,254,124,0.25)] hover:bg-[#0d1321]/70 transition-all card-shine"
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: 0.25 + i * 0.06 }}
+                    className="card group flex items-center justify-between p-4"
                   >
-                    <div>
+                    <div className="min-w-0">
                       <span className="font-rajdhani font-bold text-sm text-[#f8f8f0] group-hover:text-[#95fe7c] transition-colors block">
                         {s.name}
                       </span>
-                      <span className="text-xs font-inter text-[#4a4f62]">{s.handle}</span>
+                      <span className="text-xs font-inter text-[#4a4f62] truncate block">{s.handle}</span>
                     </div>
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3 shrink-0">
                       <span className="text-[10px] font-inter text-[#4a4f62] hidden sm:block">{s.desc}</span>
                       <span className="text-[#4a4f62] group-hover:text-[#95fe7c] transition-colors">→</span>
                     </div>
-                  </a>
+                  </motion.a>
                 ))}
               </div>
             </motion.div>
@@ -136,15 +140,16 @@ export default function Contact() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="p-6 border border-[rgba(149,254,124,0.1)] bg-[#0d1321]/40"
+              className="card card-corner p-6"
             >
-              <span className="font-rajdhani font-bold text-xs uppercase tracking-widest text-[#95fe7c] block mb-3">
-                Agentic Economy
-              </span>
+              <div className="flex items-center gap-2 mb-3">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#95fe7c]/60" />
+                <span className="label">Agentic Economy</span>
+              </div>
               <p className="text-sm font-inter text-[#8a8fa8] mb-4 leading-relaxed">
                 AI agents can contact me via x402. Pay $0.50 USDC on Base and submit a structured brief — problem, budget, timeline. Qualifying briefs get a response.
               </p>
-              <code className="text-xs font-inter text-[#4a4f62] bg-[#08090f] px-3 py-2 block border border-[rgba(149,254,124,0.06)]">
+              <code className="text-xs font-inter text-[#95fe7c]/60 bg-[#08090f] px-3 py-2 block border border-[rgba(149,254,124,0.1)]">
                 POST /api/contact-x402
               </code>
             </motion.div>
@@ -157,8 +162,8 @@ export default function Contact() {
             transition={{ duration: 0.7, delay: 0.2 }}
           >
             {submitted ? (
-              <div className="p-10 border border-[rgba(149,254,124,0.2)] bg-[#0d1321]/60 text-center">
-                <span className="font-rajdhani font-bold text-[#95fe7c] text-3xl block mb-3">Got it.</span>
+              <div className="card card-corner box-glow p-10 text-center">
+                <span className="font-rajdhani font-bold text-[#95fe7c] text-3xl block mb-3 text-glow">Got it.</span>
                 <p className="text-[#8a8fa8] font-inter text-sm">
                   Your email client should have opened. If not, reach me directly at{" "}
                   <a href="mailto:onchain@pressreleasemarketplace.com" className="text-[#95fe7c] hover:underline">
@@ -167,105 +172,108 @@ export default function Contact() {
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-                <div className="grid sm:grid-cols-2 gap-5">
-                  <div className="flex flex-col gap-2">
-                    <label className="text-[10px] font-inter uppercase tracking-widest text-[#95fe7c]">Name *</label>
-                    <input
-                      required
-                      type="text"
-                      value={form.name}
-                      onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      className="bg-[#0d1321]/60 border border-[rgba(149,254,124,0.12)] text-[#f8f8f0] font-inter text-sm px-4 py-3 focus:outline-none focus:border-[rgba(149,254,124,0.4)] transition-colors placeholder-[#4a4f62]"
-                      placeholder="Your name"
-                    />
+              <div className="card p-6 md:p-8">
+                <span className="label block mb-6">Intake Form</span>
+                <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+                  <div className="grid sm:grid-cols-2 gap-5">
+                    <div className="flex flex-col gap-2">
+                      <label className="text-[10px] font-inter uppercase tracking-widest text-[#95fe7c]">Name *</label>
+                      <input
+                        required
+                        type="text"
+                        value={form.name}
+                        onChange={(e) => setForm({ ...form, name: e.target.value })}
+                        className="bg-[#08090f]/80 border border-[rgba(149,254,124,0.12)] text-[#f8f8f0] font-inter text-sm px-4 py-3 focus:outline-none focus:border-[rgba(149,254,124,0.4)] transition-colors placeholder-[#4a4f62]"
+                        placeholder="Your name"
+                      />
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <label className="text-[10px] font-inter uppercase tracking-widest text-[#95fe7c]">Email *</label>
+                      <input
+                        required
+                        type="email"
+                        value={form.email}
+                        onChange={(e) => setForm({ ...form, email: e.target.value })}
+                        className="bg-[#08090f]/80 border border-[rgba(149,254,124,0.12)] text-[#f8f8f0] font-inter text-sm px-4 py-3 focus:outline-none focus:border-[rgba(149,254,124,0.4)] transition-colors placeholder-[#4a4f62]"
+                        placeholder="you@domain.com"
+                      />
+                    </div>
                   </div>
-                  <div className="flex flex-col gap-2">
-                    <label className="text-[10px] font-inter uppercase tracking-widest text-[#95fe7c]">Email *</label>
-                    <input
-                      required
-                      type="email"
-                      value={form.email}
-                      onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      className="bg-[#0d1321]/60 border border-[rgba(149,254,124,0.12)] text-[#f8f8f0] font-inter text-sm px-4 py-3 focus:outline-none focus:border-[rgba(149,254,124,0.4)] transition-colors placeholder-[#4a4f62]"
-                      placeholder="you@domain.com"
-                    />
-                  </div>
-                </div>
 
-                <div className="flex flex-col gap-2">
-                  <label className="text-[10px] font-inter uppercase tracking-widest text-[#95fe7c]">
-                    What are you looking for?
-                  </label>
-                  <select
-                    value={form.service}
-                    onChange={(e) => setForm({ ...form, service: e.target.value })}
-                    className="bg-[#0d1321]/60 border border-[rgba(149,254,124,0.12)] text-[#f8f8f0] font-inter text-sm px-4 py-3 focus:outline-none focus:border-[rgba(149,254,124,0.4)] transition-colors appearance-none cursor-pointer"
+                  <div className="flex flex-col gap-2">
+                    <label className="text-[10px] font-inter uppercase tracking-widest text-[#95fe7c]">
+                      What are you looking for?
+                    </label>
+                    <select
+                      value={form.service}
+                      onChange={(e) => setForm({ ...form, service: e.target.value })}
+                      className="bg-[#08090f]/80 border border-[rgba(149,254,124,0.12)] text-[#f8f8f0] font-inter text-sm px-4 py-3 focus:outline-none focus:border-[rgba(149,254,124,0.4)] transition-colors appearance-none cursor-pointer"
+                    >
+                      <option value="" className="bg-[#0d1321]">Select a service</option>
+                      {serviceTypes.map((s) => (
+                        <option key={s} value={s} className="bg-[#0d1321]">{s}</option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div className="grid sm:grid-cols-2 gap-5">
+                    <div className="flex flex-col gap-2">
+                      <label className="text-[10px] font-inter uppercase tracking-widest text-[#95fe7c]">Budget range</label>
+                      <select
+                        value={form.budget}
+                        onChange={(e) => setForm({ ...form, budget: e.target.value })}
+                        className="bg-[#08090f]/80 border border-[rgba(149,254,124,0.12)] text-[#f8f8f0] font-inter text-sm px-4 py-3 focus:outline-none focus:border-[rgba(149,254,124,0.4)] transition-colors appearance-none cursor-pointer"
+                      >
+                        <option value="" className="bg-[#0d1321]">Select range</option>
+                        <option className="bg-[#0d1321]">Under $500</option>
+                        <option className="bg-[#0d1321]">$500 – $1,500</option>
+                        <option className="bg-[#0d1321]">$1,500 – $5,000</option>
+                        <option className="bg-[#0d1321]">$5,000+</option>
+                        <option className="bg-[#0d1321]">Let&apos;s discuss</option>
+                      </select>
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <label className="text-[10px] font-inter uppercase tracking-widest text-[#95fe7c]">Timeline</label>
+                      <select
+                        value={form.timeline}
+                        onChange={(e) => setForm({ ...form, timeline: e.target.value })}
+                        className="bg-[#08090f]/80 border border-[rgba(149,254,124,0.12)] text-[#f8f8f0] font-inter text-sm px-4 py-3 focus:outline-none focus:border-[rgba(149,254,124,0.4)] transition-colors appearance-none cursor-pointer"
+                      >
+                        <option value="" className="bg-[#0d1321]">When do you need it?</option>
+                        <option className="bg-[#0d1321]">ASAP</option>
+                        <option className="bg-[#0d1321]">Within 1 week</option>
+                        <option className="bg-[#0d1321]">Within 1 month</option>
+                        <option className="bg-[#0d1321]">Flexible</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col gap-2">
+                    <label className="text-[10px] font-inter uppercase tracking-widest text-[#95fe7c]">
+                      Tell me everything *
+                    </label>
+                    <textarea
+                      required
+                      rows={6}
+                      value={form.message}
+                      onChange={(e) => setForm({ ...form, message: e.target.value })}
+                      className="bg-[#08090f]/80 border border-[rgba(149,254,124,0.12)] text-[#f8f8f0] font-inter text-sm px-4 py-3 focus:outline-none focus:border-[rgba(149,254,124,0.4)] transition-colors placeholder-[#4a4f62] resize-none"
+                      placeholder="What are you building? Where is it breaking? What do you actually need? The more context, the better."
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="font-rajdhani font-bold text-base uppercase tracking-widest px-8 py-4 bg-[#95fe7c] text-[#08090f] hover:opacity-90 transition-opacity text-center"
                   >
-                    <option value="" className="bg-[#0d1321]">Select a service</option>
-                    {serviceTypes.map((s) => (
-                      <option key={s} value={s} className="bg-[#0d1321]">{s}</option>
-                    ))}
-                  </select>
-                </div>
+                    Send It →
+                  </button>
 
-                <div className="grid sm:grid-cols-2 gap-5">
-                  <div className="flex flex-col gap-2">
-                    <label className="text-[10px] font-inter uppercase tracking-widest text-[#95fe7c]">Budget range</label>
-                    <select
-                      value={form.budget}
-                      onChange={(e) => setForm({ ...form, budget: e.target.value })}
-                      className="bg-[#0d1321]/60 border border-[rgba(149,254,124,0.12)] text-[#f8f8f0] font-inter text-sm px-4 py-3 focus:outline-none focus:border-[rgba(149,254,124,0.4)] transition-colors appearance-none cursor-pointer"
-                    >
-                      <option value="" className="bg-[#0d1321]">Select range</option>
-                      <option className="bg-[#0d1321]">Under $500</option>
-                      <option className="bg-[#0d1321]">$500 – $1,500</option>
-                      <option className="bg-[#0d1321]">$1,500 – $5,000</option>
-                      <option className="bg-[#0d1321]">$5,000+</option>
-                      <option className="bg-[#0d1321]">Let&apos;s discuss</option>
-                    </select>
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <label className="text-[10px] font-inter uppercase tracking-widest text-[#95fe7c]">Timeline</label>
-                    <select
-                      value={form.timeline}
-                      onChange={(e) => setForm({ ...form, timeline: e.target.value })}
-                      className="bg-[#0d1321]/60 border border-[rgba(149,254,124,0.12)] text-[#f8f8f0] font-inter text-sm px-4 py-3 focus:outline-none focus:border-[rgba(149,254,124,0.4)] transition-colors appearance-none cursor-pointer"
-                    >
-                      <option value="" className="bg-[#0d1321]">When do you need it?</option>
-                      <option className="bg-[#0d1321]">ASAP</option>
-                      <option className="bg-[#0d1321]">Within 1 week</option>
-                      <option className="bg-[#0d1321]">Within 1 month</option>
-                      <option className="bg-[#0d1321]">Flexible</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-2">
-                  <label className="text-[10px] font-inter uppercase tracking-widest text-[#95fe7c]">
-                    Tell me everything *
-                  </label>
-                  <textarea
-                    required
-                    rows={6}
-                    value={form.message}
-                    onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    className="bg-[#0d1321]/60 border border-[rgba(149,254,124,0.12)] text-[#f8f8f0] font-inter text-sm px-4 py-3 focus:outline-none focus:border-[rgba(149,254,124,0.4)] transition-colors placeholder-[#4a4f62] resize-none"
-                    placeholder="What are you building? Where is it breaking? What do you actually need? The more context, the better."
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="font-rajdhani font-bold text-base uppercase tracking-widest px-8 py-4 bg-[#95fe7c] text-[#08090f] hover:opacity-90 transition-opacity text-center"
-                >
-                  Send It →
-                </button>
-
-                <p className="text-[10px] font-inter text-[#4a4f62] text-center">
-                  This opens your email client with the form prefilled. No data is sent to a third party.
-                </p>
-              </form>
+                  <p className="text-[10px] font-inter text-[#4a4f62] text-center">
+                    This opens your email client with the form prefilled. No data is sent to a third party.
+                  </p>
+                </form>
+              </div>
             )}
           </motion.div>
         </div>

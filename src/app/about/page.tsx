@@ -43,10 +43,24 @@ const platforms = [
   { name: "THE ZAO", handle: "zaofestivals.com", href: "https://zaofestivals.com" },
 ];
 
+const roles = [
+  { role: "WaveWarz", title: "Co-Founder" },
+  { role: "THE ZAO", title: "Co-Founder · Visual Brand Strategist" },
+  { role: "NFT Press", title: "Co-Founder" },
+  { role: "Statz App", title: "Builder" },
+];
+
 export default function About() {
   return (
-    <div className="min-h-screen pt-24 pb-32 px-6">
-      <div className="max-w-6xl mx-auto">
+    <div className="relative min-h-screen pt-24 pb-32 px-6 overflow-x-hidden">
+      {/* Noise texture */}
+      <div className="noise" />
+
+      {/* Ambient glow orbs */}
+      <div className="absolute top-24 left-0 w-[500px] h-[400px] rounded-full bg-[#95fe7c]/4 blur-3xl pointer-events-none" />
+      <div className="absolute top-64 right-0 w-80 h-80 rounded-full bg-[#95fe7c]/3 blur-3xl pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto relative">
 
         {/* ── HEADER ──────────────────────────────────────── */}
         <motion.div
@@ -55,17 +69,15 @@ export default function About() {
           transition={{ duration: 0.7 }}
           className="mb-20"
         >
-          <span className="font-rajdhani font-bold text-xs uppercase tracking-widest text-[#95fe7c] block mb-4">
-            About
-          </span>
+          <span className="label block mb-4">About</span>
           <h1
-            className="font-rajdhani font-bold text-[#f8f8f0] leading-tight"
+            className="font-rajdhani font-bold text-[#f8f8f0] leading-tight break-words"
             style={{ fontSize: "clamp(2.5rem, 7vw, 6rem)" }}
           >
             SAMANTHA KINNEY
           </h1>
           <h2
-            className="font-rajdhani font-bold text-[#95fe7c] leading-tight"
+            className="font-rajdhani font-bold text-[#95fe7c] leading-tight text-glow-sm"
             style={{ fontSize: "clamp(1.5rem, 4vw, 3rem)" }}
           >
             @candytoybox
@@ -80,23 +92,24 @@ export default function About() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="sticky top-28"
           >
-            <div className="relative">
-              {/* Green border frame */}
-              <div className="absolute -inset-1 border border-[rgba(149,254,124,0.3)]" />
-              <div className="absolute -inset-3 border border-[rgba(149,254,124,0.1)]" />
+            {/* Photo with corner bracket frame */}
+            <div className="photo-frame relative overflow-visible">
+              {/* Outer glow border */}
+              <div className="absolute -inset-1 border border-[rgba(149,254,124,0.25)]" />
               <Image
                 src="/images/candy-pfp.jpg"
                 alt="Samantha Kinney — Candy"
                 width={400}
                 height={400}
-                className="w-full object-cover grayscale contrast-110"
+                className="w-full object-cover grayscale contrast-110 relative z-10"
                 priority
               />
-              {/* Green overlay tint on hover */}
-              <div className="absolute inset-0 bg-[#95fe7c] opacity-0 hover:opacity-5 transition-opacity" />
+              {/* Green tint hover */}
+              <div className="absolute inset-0 z-20 bg-[#95fe7c] opacity-0 hover:opacity-5 transition-opacity" />
             </div>
+
             {/* Name plate */}
-            <div className="mt-4 p-4 border border-[rgba(149,254,124,0.12)] bg-[#0d1321]/60">
+            <div className="mt-4 p-4 card">
               <span className="font-rajdhani font-bold text-[#f8f8f0] block">Samantha Kinney</span>
               <span className="text-xs text-[#8a8fa8] font-inter">Jericho, NY · Available globally</span>
             </div>
@@ -123,16 +136,17 @@ export default function About() {
 
             {/* Roles */}
             <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
-              {[
-                { role: "WaveWarz", title: "Co-Founder" },
-                { role: "THE ZAO", title: "Co-Founder · Visual Brand Strategist" },
-                { role: "NFT Press", title: "Co-Founder" },
-                { role: "Statz App", title: "Builder" },
-              ].map((r) => (
-                <div key={r.role} className="p-3 border border-[rgba(149,254,124,0.1)] bg-[#0d1321]/40">
+              {roles.map((r, i) => (
+                <motion.div
+                  key={r.role}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.5 + i * 0.08 }}
+                  className="card card-corner p-3"
+                >
                   <span className="font-rajdhani font-bold text-[#95fe7c] text-sm block">{r.role}</span>
                   <span className="text-xs font-inter text-[#8a8fa8]">{r.title}</span>
-                </div>
+                </motion.div>
               ))}
             </div>
           </motion.div>
@@ -147,9 +161,7 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="mb-12"
           >
-            <span className="font-rajdhani font-bold text-xs uppercase tracking-widest text-[#95fe7c] block mb-3">
-              Background
-            </span>
+            <span className="label block mb-3">Background</span>
             <h2
               className="font-rajdhani font-bold text-[#f8f8f0] leading-tight"
               style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)" }}
@@ -160,7 +172,7 @@ export default function About() {
 
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-0 top-0 bottom-0 w-px bg-[rgba(149,254,124,0.1)] ml-2 hidden md:block" />
+            <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-[rgba(149,254,124,0.2)] via-[rgba(149,254,124,0.1)] to-transparent ml-2 hidden md:block" />
 
             <div className="flex flex-col gap-0">
               {arc.map((a, i) => (
@@ -173,13 +185,14 @@ export default function About() {
                   className="md:pl-10 relative"
                 >
                   {/* Dot */}
-                  <div className="hidden md:block absolute left-0 top-6 w-4 h-4 border border-[#95fe7c] bg-[#08090f] rounded-full" style={{ transform: "translateX(-6px)" }} />
+                  <div
+                    className="hidden md:block absolute left-0 top-6 w-4 h-4 border border-[#95fe7c] bg-[#08090f] rounded-full"
+                    style={{ transform: "translateX(-6px)", boxShadow: "0 0 8px rgba(149,254,124,0.3)" }}
+                  />
 
-                  <div className="border-b border-[rgba(149,254,124,0.08)] py-8">
-                    <span className="font-rajdhani font-bold text-xs uppercase tracking-widest text-[#95fe7c] block mb-2">
-                      {a.era}
-                    </span>
-                    <h3 className="font-rajdhani font-bold text-[#f8f8f0] text-xl mb-3">
+                  <div className="border-b border-[rgba(149,254,124,0.08)] py-8 group">
+                    <span className="label block mb-2">{a.era}</span>
+                    <h3 className="font-rajdhani font-bold text-[#f8f8f0] text-xl mb-3 group-hover:text-[#95fe7c] transition-colors">
                       &ldquo;{a.insight}&rdquo;
                     </h3>
                     <p className="text-sm font-inter text-[#8a8fa8] leading-relaxed max-w-2xl">
@@ -198,11 +211,9 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-24 p-8 border border-[rgba(149,254,124,0.1)] bg-[#0d1321]/40"
+          className="mb-24 card card-corner p-8"
         >
-          <span className="font-rajdhani font-bold text-xs uppercase tracking-widest text-[#95fe7c] block mb-4">
-            Beta Testing History
-          </span>
+          <span className="label block mb-4">Beta Testing History</span>
           <h3 className="font-rajdhani font-bold text-[#f8f8f0] text-2xl mb-6">
             50+ Betas Before Most People Knew What Web3 Was
           </h3>
@@ -210,7 +221,7 @@ export default function About() {
             {betas.map((b) => (
               <span
                 key={b}
-                className="font-inter text-sm px-3 py-1.5 border border-[rgba(149,254,124,0.15)] text-[#8a8fa8]"
+                className="font-inter text-sm px-3 py-1.5 border border-[rgba(149,254,124,0.15)] text-[#8a8fa8] hover:border-[rgba(149,254,124,0.3)] hover:text-[#f8f8f0] transition-colors"
               >
                 {b}
               </span>
@@ -229,26 +240,28 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <span className="font-rajdhani font-bold text-xs uppercase tracking-widest text-[#95fe7c] block mb-4">
-            Find Me Online
-          </span>
+          <span className="label block mb-4">Find Me Online</span>
           <h3 className="font-rajdhani font-bold text-[#f8f8f0] text-2xl mb-8">
             Where I&apos;m Active Daily
           </h3>
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-3">
-            {platforms.map((p) => (
-              <a
+            {platforms.map((p, i) => (
+              <motion.a
                 key={p.name}
                 href={p.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group p-4 border border-[rgba(149,254,124,0.1)] bg-[#0d1321]/40 hover:border-[rgba(149,254,124,0.3)] transition-all card-shine"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.06 }}
+                className="card card-corner group p-4"
               >
                 <span className="font-rajdhani font-bold text-sm text-[#f8f8f0] group-hover:text-[#95fe7c] transition-colors block mb-1">
                   {p.name}
                 </span>
                 <span className="text-xs font-inter text-[#4a4f62]">{p.handle}</span>
-              </a>
+              </motion.a>
             ))}
           </div>
         </motion.div>
