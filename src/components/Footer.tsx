@@ -10,7 +10,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[rgba(149,254,124,0.1)] mt-32 py-14 px-6">
+    <footer className="border-t border-[rgba(149,254,124,0.1)] py-14 px-6 md:ml-0">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
           {/* Brand */}

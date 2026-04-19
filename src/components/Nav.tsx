@@ -34,9 +34,9 @@ export default function Nav() {
             : "bg-transparent"
         }`}
       >
-        <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 hover:opacity-80 transition-opacity group">
+        <nav className="max-w-6xl mx-auto px-6 md:pl-20 h-16 flex items-center justify-between">
+          {/* Logo — hidden on desktop (sidebar handles it) */}
+          <Link href="/" className="flex md:hidden items-center gap-2.5 hover:opacity-80 transition-opacity group">
             <CubeLogo size={22} />
             <span className="font-rajdhani font-bold text-[#95fe7c] tracking-[0.22em] text-sm uppercase">
               CANDY

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Rajdhani, Inter } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
+import Sidebar from "@/components/Sidebar";
 import Footer from "@/components/Footer";
 
 const rajdhani = Rajdhani({
@@ -56,8 +57,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${rajdhani.variable} ${inter.variable}`}>
       <body className="bg-[#08090f] text-[#f8f8f0] antialiased overflow-x-hidden">
+        <Sidebar />
         <Nav />
-        <main>{children}</main>
+        <main className="md:ml-14">{children}</main>
         <Footer />
       </body>
     </html>
