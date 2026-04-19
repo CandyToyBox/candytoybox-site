@@ -657,7 +657,7 @@ export default function Home() {
               className="font-rajdhani font-bold text-[#f8f8f0] leading-tight mb-6"
               style={{ fontSize: "clamp(1.5rem, 3.5vw, 2.2rem)" }}
             >
-              &ldquo;I&apos;ve never been able to use a product normally.&rdquo;
+              &ldquo;Experiments owning the internet.&rdquo;
             </blockquote>
             <Link
               href="/about"

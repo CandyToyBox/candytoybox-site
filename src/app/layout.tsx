@@ -59,8 +59,13 @@ export default function RootLayout({
       <body className="bg-[#08090f] text-[#f8f8f0] antialiased overflow-x-hidden">
         <Sidebar />
         <Nav />
-        <main className="md:ml-14">{children}</main>
-        <Footer />
+        <div className="flex">
+          <div className="hidden md:block w-14 flex-shrink-0" aria-hidden="true" />
+          <div className="flex-1 min-w-0">
+            <main>{children}</main>
+            <Footer />
+          </div>
+        </div>
       </body>
     </html>
   );
