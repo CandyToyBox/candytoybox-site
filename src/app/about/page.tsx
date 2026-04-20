@@ -32,7 +32,7 @@ const arc = [
   {
     tag: "MAR_2024_REACH",
     era: "ZAO-Chella Sync",
-    insight: "Bridging physical live events with digital ownership.",
+    insight: "Physical and digital finally collapsed into each other.",
     body: "Bridged physical live events with digital ownership. Scaling the toybox beyond the screen into tangible, hybrid environments.",
   },
   {

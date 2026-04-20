@@ -50,7 +50,7 @@ export default function Nav() {
                 key={l.href}
                 href={l.href}
                 className={`font-rajdhani font-bold text-xs tracking-[0.18em] uppercase transition-colors ${
-                  pathname === l.href || pathname.startsWith(l.href + "/")
+                  pathname === l.href
                     ? "text-[#ff2060]"
                     : "text-[#8a8fa8] hover:text-[#f8f8f0]"
                 }`}
