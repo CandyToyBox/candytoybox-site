@@ -10,12 +10,12 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[rgba(255,32,96,0.1)] py-14 px-6 md:ml-0">
+    <footer className="border-t border-[rgba(149,254,124,0.1)] py-14 px-6 md:ml-0">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
           {/* Brand */}
           <div className="flex flex-col gap-2">
-            <span className="font-rajdhani font-bold text-[#ff2060] tracking-[0.25em] text-sm uppercase">
+            <span className="font-rajdhani font-bold text-[#95fe7c] tracking-[0.25em] text-sm uppercase">
               CANDYTOYBOX
             </span>
             <span className="text-[#4a4f62] text-xs font-inter max-w-xs">
@@ -49,7 +49,7 @@ export default function Footer() {
                 href={s.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#4a4f62] hover:text-[#ff2060] text-sm transition-colors"
+                className="text-[#4a4f62] hover:text-[#95fe7c] text-sm transition-colors"
               >
                 {s.label}
               </a>
@@ -57,12 +57,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-[rgba(255,32,96,0.06)] flex flex-col md:flex-row items-center justify-between gap-3">
+        <div className="mt-10 pt-6 border-t border-[rgba(149,254,124,0.06)] flex flex-col md:flex-row items-center justify-between gap-3">
           <span className="text-[#4a4f62] text-xs">
             © {new Date().getFullYear()} Samantha Kinney. All rights reserved.
-          </span>
-          <span className="text-[#ff2060]/30 text-[10px] font-rajdhani font-bold tracking-[0.2em] uppercase">
-            END_OF_FILE // CANDYTOYBOX.EXE
           </span>
           <span className="text-[#4a4f62] text-xs">
             Jericho, NY · Available for hire globally

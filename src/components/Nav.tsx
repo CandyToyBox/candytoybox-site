@@ -6,10 +6,10 @@ import { useState, useEffect } from "react";
 import CubeLogo from "./CubeLogo";
 
 const links = [
-  { label: "CATALOG", href: "/work" },
-  { label: "SERVICES", href: "/services" },
-  { label: "BIO", href: "/about" },
-  { label: "CONNECT", href: "/contact" },
+  { label: "Work", href: "/work" },
+  { label: "Services", href: "/services" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Nav() {
@@ -30,7 +30,7 @@ export default function Nav() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-[#08090f]/90 backdrop-blur-xl border-b border-[rgba(255,32,96,0.08)]"
+            ? "bg-[#08090f]/90 backdrop-blur-xl border-b border-[rgba(149,254,124,0.08)]"
             : "bg-transparent"
         }`}
       >
@@ -38,7 +38,7 @@ export default function Nav() {
           {/* Logo — hidden on desktop (sidebar handles it) */}
           <Link href="/" className="flex md:hidden items-center gap-2.5 hover:opacity-80 transition-opacity group">
             <CubeLogo size={22} />
-            <span className="font-rajdhani font-bold text-[#ff2060] tracking-[0.22em] text-sm uppercase">
+            <span className="font-rajdhani font-bold text-[#95fe7c] tracking-[0.22em] text-sm uppercase">
               CANDY
             </span>
           </Link>
@@ -51,7 +51,7 @@ export default function Nav() {
                 href={l.href}
                 className={`font-rajdhani font-bold text-xs tracking-[0.18em] uppercase transition-colors ${
                   pathname === l.href
-                    ? "text-[#ff2060]"
+                    ? "text-[#95fe7c]"
                     : "text-[#8a8fa8] hover:text-[#f8f8f0]"
                 }`}
               >
@@ -60,17 +60,10 @@ export default function Nav() {
             ))}
             <Link
               href="/services"
-              className="font-rajdhani font-bold text-xs uppercase tracking-[0.18em] px-4 py-1.5 border border-[#ff2060] text-[#ff2060] hover:bg-[#ff2060] hover:text-[#08090f] transition-all"
+              className="font-rajdhani font-bold text-xs uppercase tracking-[0.18em] px-4 py-1.5 border border-[#95fe7c] text-[#95fe7c] hover:bg-[#95fe7c] hover:text-[#08090f] transition-all"
             >
               HIRE
             </Link>
-          </div>
-
-          {/* Status indicator — desktop only */}
-          <div className="hidden md:flex items-center gap-2 ml-4">
-            <span className="text-[9px] font-rajdhani font-bold tracking-[0.15em] text-[#8a8fa8] uppercase">STATUS:</span>
-            <span className="text-[9px] font-rajdhani font-bold tracking-[0.15em] text-[#ff2060] uppercase">ACTIVE</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-[#ff2060] animate-pulse-dot ml-0.5" />
           </div>
 
           {/* Mobile toggle */}
@@ -94,10 +87,6 @@ export default function Nav() {
       >
         <div className="absolute inset-0 bg-[#08090f]/95 backdrop-blur-xl" onClick={() => setOpen(false)} />
         <div className="absolute top-16 left-0 right-0 bottom-0 flex flex-col justify-center px-8 gap-8">
-          {/* Terminal header */}
-          <span className="text-[10px] font-rajdhani font-bold tracking-[0.25em] text-[#ff2060]/60 uppercase mb-2">
-            SYSTEM_NAV // SELECT_ROUTE
-          </span>
           {links.map((l, i) => (
             <Link
               key={l.href}
@@ -108,7 +97,7 @@ export default function Nav() {
               style={{
                 fontSize: "clamp(2rem, 8vw, 3.5rem)",
                 animationDelay: `${i * 0.07}s`,
-                color: pathname === l.href ? "#ff2060" : "#f8f8f0",
+                color: pathname === l.href ? "#95fe7c" : "#f8f8f0",
               }}
             >
               {l.label}
@@ -116,7 +105,7 @@ export default function Nav() {
           ))}
           <Link
             href="/services"
-            className="inline-block font-rajdhani font-bold uppercase tracking-widest text-2xl px-7 py-3.5 bg-[#ff2060] text-[#08090f] w-fit mt-2"
+            className="inline-block font-rajdhani font-bold uppercase tracking-widest text-2xl px-7 py-3.5 bg-[#95fe7c] text-[#08090f] w-fit mt-2"
             style={{ animationDelay: "0.28s" }}
           >
             HIRE ME

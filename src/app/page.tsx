@@ -120,7 +120,7 @@ function WorkCardVisual({ id }: { id: string }) {
         <circle cx="320" cy="220" r="4" fill="#95fe7c" />
         <circle cx="200" cy="40" r="4" fill="#95fe7c" />
       </svg>
-      <div className="absolute inset-0 bg-gradient-to-br from-[#ff2060]/5 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#95fe7c]/5 to-transparent" />
     </div>
   );
 }
@@ -135,20 +135,13 @@ export default function Home() {
         <div className="absolute inset-0 radial-green pointer-events-none" />
         <div
           className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full pointer-events-none animate-glow"
-          style={{ background: "radial-gradient(circle, rgba(255,32,96,0.06) 0%, transparent 70%)", filter: "blur(60px)" }}
+          style={{ background: "radial-gradient(circle, rgba(149,254,124,0.06) 0%, transparent 70%)", filter: "blur(60px)" }}
         />
 
         <div className="relative max-w-6xl mx-auto w-full">
-          {/* Terminal path */}
-          <motion.div {...fadeUp(0)} className="mb-6 flex flex-wrap items-center gap-x-4 gap-y-1">
-            <span className="terminal-path">SYSTEM_LOG_BOOT: CANDYTOYBOX.EXE</span>
-            <span className="terminal-path">·</span>
-            <span className="terminal-path">FETCHING IDENTITY... OK</span>
-          </motion.div>
-
-          <motion.div {...fadeUp(0.05)} className="inline-flex items-center gap-2.5 mb-10">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#ff2060] animate-pulse-dot" />
-            <span className="label text-[#ff2060]">CORE_MISSION_V1.0 · Available for hire</span>
+          <motion.div {...fadeUp(0)} className="inline-flex items-center gap-2.5 mb-10">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#95fe7c] animate-pulse-dot" />
+            <span className="label text-[#95fe7c]">CORE_MISSION_V1.0 · Available for hire</span>
           </motion.div>
 
           <motion.h1
@@ -164,7 +157,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="font-rajdhani font-bold text-[#ff2060] leading-[0.88] tracking-tight text-glow break-words mb-8"
+            className="font-rajdhani font-bold text-[#95fe7c] leading-[0.88] tracking-tight text-glow break-words mb-8"
             style={{ fontSize: "clamp(3rem, 9vw, 8rem)" }}
           >
             INTERNET I OWN.
@@ -179,17 +172,17 @@ export default function Home() {
           </motion.p>
 
           <motion.div {...fadeUp(0.6)} className="flex flex-wrap gap-4">
-            <Link href="/services" className="font-rajdhani font-bold text-sm md:text-base uppercase tracking-widest px-7 py-3.5 bg-[#ff2060] text-[#08090f] hover:opacity-90 transition-opacity">
+            <Link href="/services" className="font-rajdhani font-bold text-sm md:text-base uppercase tracking-widest px-7 py-3.5 bg-[#95fe7c] text-[#08090f] hover:opacity-90 transition-opacity">
               Hire Me
             </Link>
-            <Link href="/work" className="font-rajdhani font-bold text-sm md:text-base uppercase tracking-widest px-7 py-3.5 border border-[rgba(255,32,96,0.35)] text-[#f8f8f0] hover:border-[#ff2060] hover:text-[#ff2060] transition-all">
+            <Link href="/work" className="font-rajdhani font-bold text-sm md:text-base uppercase tracking-widest px-7 py-3.5 border border-[rgba(149,254,124,0.35)] text-[#f8f8f0] hover:border-[#95fe7c] hover:text-[#95fe7c] transition-all">
               See the Work →
             </Link>
           </motion.div>
         </div>
 
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.6 }} className="absolute bottom-8 left-1/2 -translate-x-1/2">
-          <div className="w-px h-10 bg-gradient-to-b from-transparent via-[rgba(255,32,96,0.5)] to-transparent" />
+          <div className="w-px h-10 bg-gradient-to-b from-transparent via-[rgba(149,254,124,0.5)] to-transparent" />
         </motion.div>
       </section>
 
@@ -197,14 +190,14 @@ export default function Home() {
       <ScrollingTicker />
 
       {/* ══ WORK ══════════════════════════════════════════════ */}
-      <section className="border-b border-[rgba(255,32,96,0.07)]">
+      <section className="border-b border-[rgba(149,254,124,0.07)]">
         {/* Editorial heading row */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="px-6 py-8 md:py-10 border-b border-[rgba(255,32,96,0.07)] flex flex-col sm:flex-row sm:items-end justify-between gap-2"
+          className="px-6 py-8 md:py-10 border-b border-[rgba(149,254,124,0.07)] flex flex-col sm:flex-row sm:items-end justify-between gap-2"
         >
           <h2
             className="font-rajdhani font-bold text-[#f8f8f0] leading-none tracking-tight"
@@ -229,30 +222,30 @@ export default function Home() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: i * 0.1 }}
-              className="group relative overflow-hidden border-b border-r border-[rgba(255,32,96,0.07)] aspect-[4/3]"
+              className="group relative overflow-hidden border-b border-r border-[rgba(149,254,124,0.07)] aspect-[4/3]"
               style={{ minHeight: "280px" }}
             >
               {/* Visual background */}
               <WorkCardVisual id={p.id} />
 
               {/* Hover overlay */}
-              <div className="absolute inset-0 bg-[#ff2060]/0 group-hover:bg-[#ff2060]/5 transition-all duration-500" />
+              <div className="absolute inset-0 bg-[#95fe7c]/0 group-hover:bg-[#95fe7c]/5 transition-all duration-500" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#08090f] via-[rgba(8,9,15,0.3)] to-transparent" />
 
               {/* Content */}
               <div className="absolute bottom-0 left-0 right-0 p-5 flex items-end justify-between">
                 <div>
-                  <h3 className="font-rajdhani font-bold text-[#f8f8f0] group-hover:text-[#ff2060] transition-colors"
+                  <h3 className="font-rajdhani font-bold text-[#f8f8f0] group-hover:text-[#95fe7c] transition-colors"
                     style={{ fontSize: "clamp(1.25rem, 3vw, 1.75rem)" }}>
                     {p.label}
                   </h3>
                   <p className="text-xs font-inter text-[#8a8fa8] mt-0.5">{p.stat}</p>
                 </div>
                 <div className="flex flex-col items-end gap-1.5">
-                  <span className="font-rajdhani font-bold text-[10px] uppercase tracking-widest px-2 py-0.5 border border-[rgba(255,32,96,0.4)] text-[#ff2060]">
+                  <span className="font-rajdhani font-bold text-[10px] uppercase tracking-widest px-2 py-0.5 border border-[rgba(149,254,124,0.4)] text-[#95fe7c]">
                     {p.badge}
                   </span>
-                  <span className="text-[#4a4f62] group-hover:text-[#ff2060] transition-colors text-lg">→</span>
+                  <span className="text-[#4a4f62] group-hover:text-[#95fe7c] transition-colors text-lg">→</span>
                 </div>
               </div>
             </motion.a>
@@ -260,14 +253,14 @@ export default function Home() {
         </div>
 
         <div className="px-6 py-5 flex justify-end">
-          <Link href="/work" className="text-xs font-inter text-[#4a4f62] hover:text-[#ff2060] transition-colors uppercase tracking-widest">
+          <Link href="/work" className="text-xs font-inter text-[#4a4f62] hover:text-[#95fe7c] transition-colors uppercase tracking-widest">
             Full portfolio →
           </Link>
         </div>
       </section>
 
       {/* ══ NFT PRESS LIVE PREVIEW ════════════════════════════ */}
-      <section className="py-16 px-6 border-b border-[rgba(255,32,96,0.07)]">
+      <section className="py-16 px-6 border-b border-[rgba(149,254,124,0.07)]">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -289,7 +282,7 @@ export default function Home() {
               href="https://pressreleasemarketplace.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="shrink-0 font-rajdhani font-bold text-sm uppercase tracking-widest px-5 py-2.5 border border-[rgba(255,32,96,0.3)] text-[#f8f8f0] hover:border-[#ff2060] hover:text-[#ff2060] transition-all whitespace-nowrap"
+              className="shrink-0 font-rajdhani font-bold text-sm uppercase tracking-widest px-5 py-2.5 border border-[rgba(149,254,124,0.3)] text-[#f8f8f0] hover:border-[#95fe7c] hover:text-[#95fe7c] transition-all whitespace-nowrap"
             >
               Visit Live ↗
             </a>
@@ -301,10 +294,10 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="border border-[rgba(255,32,96,0.15)] overflow-hidden"
+            className="border border-[rgba(149,254,124,0.15)] overflow-hidden"
           >
             {/* Browser bar */}
-            <div className="flex items-center gap-2 px-4 py-2.5 bg-[#0d1321] border-b border-[rgba(255,32,96,0.1)]">
+            <div className="flex items-center gap-2 px-4 py-2.5 bg-[#0d1321] border-b border-[rgba(149,254,124,0.1)]">
               <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
               <span className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
               <span className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
@@ -315,7 +308,7 @@ export default function Home() {
                 href="https://pressreleasemarketplace.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#ff2060]/60 hover:text-[#ff2060] text-sm transition-colors"
+                className="text-[#95fe7c]/60 hover:text-[#95fe7c] text-sm transition-colors"
                 aria-label="Open in new tab"
               >
                 ↗
@@ -344,7 +337,7 @@ export default function Home() {
                 className="absolute inset-0 z-10 flex items-end justify-center pb-6 opacity-0 hover:opacity-100 transition-opacity"
                 aria-label="Open NFT Press"
               >
-                <span className="font-rajdhani font-bold text-sm uppercase tracking-widest px-6 py-3 bg-[#ff2060] text-[#08090f]">
+                <span className="font-rajdhani font-bold text-sm uppercase tracking-widest px-6 py-3 bg-[#95fe7c] text-[#08090f]">
                   Open NFT Press ↗
                 </span>
               </a>
@@ -354,7 +347,7 @@ export default function Home() {
       </section>
 
       {/* ══ ALLOWANCE APP VIDEO ═══════════════════════════════ */}
-      <section className="py-16 px-6 border-b border-[rgba(255,32,96,0.07)]">
+      <section className="py-16 px-6 border-b border-[rgba(149,254,124,0.07)]">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -373,7 +366,7 @@ export default function Home() {
               </p>
             </div>
             <div className="flex flex-col items-end gap-1 shrink-0">
-              <span className="font-rajdhani font-bold text-[10px] uppercase tracking-widest px-2 py-0.5 border border-[rgba(255,32,96,0.3)] text-[#ff2060]">
+              <span className="font-rajdhani font-bold text-[10px] uppercase tracking-widest px-2 py-0.5 border border-[rgba(149,254,124,0.3)] text-[#95fe7c]">
                 HACKATHON
               </span>
               <span className="text-[10px] font-inter text-[#4a4f62]">Base L2 · USDC</span>
@@ -385,7 +378,7 @@ export default function Home() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="relative border border-[rgba(255,32,96,0.15)] overflow-hidden bg-[#06080e]"
+            className="relative border border-[rgba(149,254,124,0.15)] overflow-hidden bg-[#06080e]"
           >
             <video
               src="/videos/allowance-app.mp4"
@@ -400,7 +393,7 @@ export default function Home() {
       </section>
 
       {/* ══ STATS ═════════════════════════════════════════════ */}
-      <section className="py-16 px-6 border-b border-[rgba(255,32,96,0.07)]">
+      <section className="py-16 px-6 border-b border-[rgba(149,254,124,0.07)]">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
             <AnimatedStat value={470} suffix="+ SOL" label="WaveWarz volume" />
@@ -412,7 +405,7 @@ export default function Home() {
       </section>
 
       {/* ══ ZAO EVENT PHOTO ═══════════════════════════════════ */}
-      <section className="border-b border-[rgba(255,32,96,0.07)] overflow-hidden">
+      <section className="border-b border-[rgba(149,254,124,0.07)] overflow-hidden">
         <motion.div
           initial={{ opacity: 0, scale: 1.04 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -455,14 +448,14 @@ export default function Home() {
       </section>
 
       {/* ══ OFFERS ════════════════════════════════════════════ */}
-      <section className="border-b border-[rgba(255,32,96,0.07)]">
+      <section className="border-b border-[rgba(149,254,124,0.07)]">
         {/* Editorial heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="px-6 py-8 md:py-10 border-b border-[rgba(255,32,96,0.07)] flex flex-col sm:flex-row sm:items-end justify-between gap-2"
+          className="px-6 py-8 md:py-10 border-b border-[rgba(149,254,124,0.07)] flex flex-col sm:flex-row sm:items-end justify-between gap-2"
         >
           <h2
             className="font-rajdhani font-bold text-[#f8f8f0] leading-none tracking-tight"
@@ -483,7 +476,7 @@ export default function Home() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="p-6 md:p-10 border-r border-[rgba(255,32,96,0.07)]"
+            className="p-6 md:p-10 border-r border-[rgba(149,254,124,0.07)]"
           >
             <div className="mb-6">
               <span className="label block mb-4">Quick Drops</span>
@@ -495,12 +488,12 @@ export default function Home() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.07 }}
-                    className="flex items-center justify-between py-3.5 border-b border-[rgba(255,32,96,0.07)] group"
+                    className="flex items-center justify-between py-3.5 border-b border-[rgba(149,254,124,0.07)] group"
                   >
-                    <span className="font-rajdhani font-bold text-[#f8f8f0] text-base group-hover:text-[#ff2060] transition-colors">
+                    <span className="font-rajdhani font-bold text-[#f8f8f0] text-base group-hover:text-[#95fe7c] transition-colors">
                       {s.name}
                     </span>
-                    <span className="font-rajdhani font-bold text-[#ff2060] text-base">{s.price}</span>
+                    <span className="font-rajdhani font-bold text-[#95fe7c] text-base">{s.price}</span>
                   </motion.div>
                 ))}
               </div>
@@ -516,12 +509,12 @@ export default function Home() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.28 + i * 0.07 }}
-                    className="flex items-center justify-between py-3.5 border-b border-[rgba(255,32,96,0.07)] group"
+                    className="flex items-center justify-between py-3.5 border-b border-[rgba(149,254,124,0.07)] group"
                   >
-                    <span className="font-rajdhani font-bold text-[#f8f8f0] text-base group-hover:text-[#ff2060] transition-colors">
+                    <span className="font-rajdhani font-bold text-[#f8f8f0] text-base group-hover:text-[#95fe7c] transition-colors">
                       {s.name}
                     </span>
-                    <span className="font-rajdhani font-bold text-[#ff2060] text-base">{s.price}</span>
+                    <span className="font-rajdhani font-bold text-[#95fe7c] text-base">{s.price}</span>
                   </motion.div>
                 ))}
               </div>
@@ -530,7 +523,7 @@ export default function Home() {
             <div className="mt-8">
               <Link
                 href="/services"
-                className="font-rajdhani font-bold text-sm uppercase tracking-widest px-6 py-3 border border-[rgba(255,32,96,0.3)] text-[#f8f8f0] hover:border-[#ff2060] hover:text-[#ff2060] transition-all inline-block"
+                className="font-rajdhani font-bold text-sm uppercase tracking-widest px-6 py-3 border border-[rgba(149,254,124,0.3)] text-[#f8f8f0] hover:border-[#95fe7c] hover:text-[#95fe7c] transition-all inline-block"
               >
                 Full pricing →
               </Link>
@@ -543,7 +536,7 @@ export default function Home() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-[#ff2060] p-8 md:p-10 flex flex-col justify-between min-h-[320px]"
+            className="bg-[#95fe7c] p-8 md:p-10 flex flex-col justify-between min-h-[320px]"
           >
             <div>
               <span className="font-rajdhani font-bold text-[10px] uppercase tracking-widest text-[#08090f]/60 block mb-4">
@@ -566,7 +559,7 @@ export default function Home() {
               </div>
               <Link
                 href="/services"
-                className="font-rajdhani font-bold text-sm uppercase tracking-widest px-5 py-2.5 bg-[#08090f] text-[#ff2060] hover:opacity-80 transition-opacity"
+                className="font-rajdhani font-bold text-sm uppercase tracking-widest px-5 py-2.5 bg-[#08090f] text-[#95fe7c] hover:opacity-80 transition-opacity"
               >
                 Scope it →
               </Link>
@@ -576,7 +569,7 @@ export default function Home() {
       </section>
 
       {/* ══ EARLY ADOPTER STATS ═══════════════════════════════ */}
-      <section className="py-16 px-6 border-b border-[rgba(255,32,96,0.07)] relative overflow-hidden">
+      <section className="py-16 px-6 border-b border-[rgba(149,254,124,0.07)] relative overflow-hidden">
         <div className="absolute inset-0 dot-bg opacity-30 pointer-events-none" />
         <div className="max-w-6xl mx-auto relative">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="mb-10">
@@ -608,13 +601,13 @@ export default function Home() {
       </section>
 
       {/* ══ ORIGIN ════════════════════════════════════════════ */}
-      <section className="border-b border-[rgba(255,32,96,0.07)]">
+      <section className="border-b border-[rgba(149,254,124,0.07)]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="px-6 py-8 md:py-10 border-b border-[rgba(255,32,96,0.07)] flex flex-col sm:flex-row sm:items-end justify-between gap-2"
+          className="px-6 py-8 md:py-10 border-b border-[rgba(149,254,124,0.07)] flex flex-col sm:flex-row sm:items-end justify-between gap-2"
         >
           <h2
             className="font-rajdhani font-bold text-[#f8f8f0] leading-none tracking-tight"
@@ -642,7 +635,7 @@ export default function Home() {
             </blockquote>
             <Link
               href="/about"
-              className="font-rajdhani font-bold text-sm uppercase tracking-widest text-[#ff2060] hover:opacity-70 transition-opacity"
+              className="font-rajdhani font-bold text-sm uppercase tracking-widest text-[#95fe7c] hover:opacity-70 transition-opacity"
             >
               Full story →
             </Link>
@@ -683,10 +676,10 @@ export default function Home() {
               Tell me what you&apos;re working on. I&apos;ll tell you how I can help — or point you to who can if I&apos;m not the right fit.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Link href="/contact" className="font-rajdhani font-bold text-sm md:text-base uppercase tracking-widest px-9 py-4 bg-[#ff2060] text-[#08090f] hover:opacity-90 transition-opacity">
+              <Link href="/contact" className="font-rajdhani font-bold text-sm md:text-base uppercase tracking-widest px-9 py-4 bg-[#95fe7c] text-[#08090f] hover:opacity-90 transition-opacity">
                 Get in Touch
               </Link>
-              <Link href="/services" className="font-rajdhani font-bold text-sm md:text-base uppercase tracking-widest px-9 py-4 border border-[rgba(255,32,96,0.3)] text-[#f8f8f0] hover:border-[#ff2060] hover:text-[#ff2060] transition-all">
+              <Link href="/services" className="font-rajdhani font-bold text-sm md:text-base uppercase tracking-widest px-9 py-4 border border-[rgba(149,254,124,0.3)] text-[#f8f8f0] hover:border-[#95fe7c] hover:text-[#95fe7c] transition-all">
                 See Pricing →
               </Link>
             </div>

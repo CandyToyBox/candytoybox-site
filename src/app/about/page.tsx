@@ -6,40 +6,24 @@ import { motion } from "framer-motion";
 
 const arc = [
   {
-    tag: "JAN_2022_INIT",
-    era: "The Entry Point",
+    era: "Hospitality",
     insight: "If the experience is off, people leave.",
-    body: "First contact with decentralised protocols. Transitioned from high-stakes hospitality management to on-chain experimentation. Beta testing begins.",
+    body: "Hospitality has one rule: the guest experience is everything. You feel when it breaks before you can name why. That instinct never left.",
   },
   {
-    tag: "JUN_2022_DEPLOY",
-    era: "Candy ToyBox Studio",
+    era: "Writing + Design",
     insight: "Bad copy and clunky UX are immediately obvious.",
-    body: "Formal establishment of the studio. Objective: build the tools we wished existed. Focused on the intersection of play and technical utility.",
+    body: "Worked in branding, copywriting, and visual identity. Developed taste — the ability to feel when something is slightly wrong before you can explain it technically.",
   },
   {
-    tag: "FEB_2023_SYNC",
-    era: "WaveWarz Launch",
+    era: "Web3 Beta Testing (Feb 2022→)",
     insight: "Real users break things that demo perfectly.",
-    body: "Deployment of the music battle primitive. 50k+ transactions in the first 48 hours. Validated the thesis of gamified on-chain interaction.",
+    body: "Joined every major beta I could find: Nike.SWOOSH, Starbucks Odyssey, PGA, Limewire, Barbie. Studied how real people react when products aren't polished. Collected rugs. Survived the bear market. Stayed anyway.",
   },
   {
-    tag: "SEP_2023_UPDATE",
-    era: "Agentic Shift",
+    era: "AI Unlock (2024→)",
     insight: "I stopped just critiquing products. I started building them.",
-    body: "Integration of LLMs into workflow automation. Developed the 'Agentic Blueprint' for rapid deployment of on-chain social experiments.",
-  },
-  {
-    tag: "MAR_2024_REACH",
-    era: "ZAO-Chella Sync",
-    insight: "Physical and digital finally collapsed into each other.",
-    body: "Bridged physical live events with digital ownership. Scaling the toybox beyond the screen into tangible, hybrid environments.",
-  },
-  {
-    tag: "CURRENT_EPOCH",
-    era: "The Perpetual Beta",
-    insight: "Continuous iteration on the internet's core primitives.",
-    body: "Currently exploring autonomous governance and modular creative stacks. 200+ apps. Production Solana smart contracts. AI agents running daily.",
+    body: "AI coding agents changed the equation. Now I build, break, rebuild, and explain what went wrong — in production, not in theory. 200+ apps. Production Solana smart contracts. Autonomous AI agent systems running daily.",
   },
 ];
 
@@ -73,8 +57,8 @@ export default function About() {
       <div className="noise" />
 
       {/* Ambient glow orbs */}
-      <div className="absolute top-24 left-0 w-[500px] h-[400px] rounded-full bg-[#ff2060]/4 blur-3xl pointer-events-none" />
-      <div className="absolute top-64 right-0 w-80 h-80 rounded-full bg-[#ff2060]/3 blur-3xl pointer-events-none" />
+      <div className="absolute top-24 left-0 w-[500px] h-[400px] rounded-full bg-[#95fe7c]/4 blur-3xl pointer-events-none" />
+      <div className="absolute top-64 right-0 w-80 h-80 rounded-full bg-[#95fe7c]/3 blur-3xl pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative">
 
@@ -85,13 +69,7 @@ export default function About() {
           transition={{ duration: 0.7 }}
           className="mb-20"
         >
-          {/* Terminal path label */}
-          <div className="flex items-center gap-3 mb-2">
-            <span className="terminal-path">FILE_PATH: /ORIGIN/PROFILES/CANDY.RAW</span>
-            <span className="terminal-path">·</span>
-            <span className="terminal-path">RESOLUTION: 4K_UPSCALED</span>
-          </div>
-          <span className="label block mb-4">SUBJECT_001 // FOUNDER</span>
+          <span className="label block mb-4">About</span>
           <h1
             className="font-rajdhani font-bold text-[#f8f8f0] leading-tight break-words"
             style={{ fontSize: "clamp(2.5rem, 7vw, 6rem)" }}
@@ -99,7 +77,7 @@ export default function About() {
             SAMANTHA KINNEY
           </h1>
           <h2
-            className="font-rajdhani font-bold text-[#ff2060] leading-tight text-glow-sm"
+            className="font-rajdhani font-bold text-[#95fe7c] leading-tight text-glow-sm"
             style={{ fontSize: "clamp(1.5rem, 4vw, 3rem)" }}
           >
             @candytoybox
@@ -117,7 +95,7 @@ export default function About() {
             {/* Photo with corner bracket frame */}
             <div className="photo-frame relative overflow-visible">
               {/* Outer glow border */}
-              <div className="absolute -inset-1 border border-[rgba(255,32,96,0.25)]" />
+              <div className="absolute -inset-1 border border-[rgba(149,254,124,0.25)]" />
               <Image
                 src="/images/candy-pfp.jpg"
                 alt="Samantha Kinney — Candy"
@@ -126,8 +104,8 @@ export default function About() {
                 className="w-full object-cover grayscale contrast-110 relative z-10"
                 priority
               />
-              {/* Pink tint hover */}
-              <div className="absolute inset-0 z-20 bg-[#ff2060] opacity-0 hover:opacity-5 transition-opacity" />
+              {/* Green tint hover */}
+              <div className="absolute inset-0 z-20 bg-[#95fe7c] opacity-0 hover:opacity-5 transition-opacity" />
             </div>
 
             {/* Name plate */}
@@ -166,7 +144,7 @@ export default function About() {
                   transition={{ duration: 0.4, delay: 0.5 + i * 0.08 }}
                   className="card card-corner p-3"
                 >
-                  <span className="font-rajdhani font-bold text-[#ff2060] text-sm block">{r.role}</span>
+                  <span className="font-rajdhani font-bold text-[#95fe7c] text-sm block">{r.role}</span>
                   <span className="text-xs font-inter text-[#8a8fa8]">{r.title}</span>
                 </motion.div>
               ))}
@@ -174,49 +152,56 @@ export default function About() {
           </motion.div>
         </div>
 
-        {/* ── ORIGIN TIMELINE ─────────────────────────────── */}
+        {/* ── STORY ARC ───────────────────────────────────── */}
         <div className="mb-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mb-4"
+            className="mb-12"
           >
-            <span className="tag-cyan block mb-1">SYSTEM_LOG_BOOT: ORIGIN_TIMELINE.EXE</span>
-            <span className="terminal-path">FETCHING MILESTONES... OK</span>
+            <span className="label block mb-3">Background</span>
+            <h2
+              className="font-rajdhani font-bold text-[#f8f8f0] leading-tight"
+              style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)" }}
+            >
+              How I Got Here
+            </h2>
           </motion.div>
 
-          <div className="divider mb-8" />
+          <div className="relative">
+            {/* Timeline line */}
+            <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-[rgba(149,254,124,0.2)] via-[rgba(149,254,124,0.1)] to-transparent ml-2 hidden md:block" />
 
-          <div className="flex flex-col gap-0">
-            {arc.map((a, i) => (
-              <motion.div
-                key={a.tag}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="border-b border-[rgba(255,32,96,0.08)] py-7 group flex gap-4"
-              >
-                {/* Arrow */}
-                <span className="text-[#ff2060]/60 font-rajdhani font-bold text-sm mt-0.5 flex-shrink-0">›</span>
+            <div className="flex flex-col gap-0">
+              {arc.map((a, i) => (
+                <motion.div
+                  key={a.era}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="md:pl-10 relative"
+                >
+                  {/* Dot */}
+                  <div
+                    className="hidden md:block absolute left-0 top-6 w-4 h-4 border border-[#95fe7c] bg-[#08090f] rounded-full"
+                    style={{ transform: "translateX(-6px)", boxShadow: "0 0 8px rgba(149,254,124,0.3)" }}
+                  />
 
-                <div className="flex-1">
-                  <span className="tag-cyan block mb-1">{a.tag}</span>
-                  <h3 className="font-rajdhani font-bold text-[#f8f8f0] text-xl mb-2 group-hover:text-[#ff2060] transition-colors uppercase tracking-wide">
-                    {a.era}
-                  </h3>
-                  <p className="text-sm font-inter text-[#8a8fa8] leading-relaxed max-w-2xl">
-                    {a.body}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="mt-6">
-            <span className="tag-cyan">END_OF_LOG // WAITING FOR INPUT_</span>
+                  <div className="border-b border-[rgba(149,254,124,0.08)] py-8 group">
+                    <span className="label block mb-2">{a.era}</span>
+                    <h3 className="font-rajdhani font-bold text-[#f8f8f0] text-xl mb-3 group-hover:text-[#95fe7c] transition-colors">
+                      &ldquo;{a.insight}&rdquo;
+                    </h3>
+                    <p className="text-sm font-inter text-[#8a8fa8] leading-relaxed max-w-2xl">
+                      {a.body}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -236,7 +221,7 @@ export default function About() {
             {betas.map((b) => (
               <span
                 key={b}
-                className="font-inter text-sm px-3 py-1.5 border border-[rgba(255,32,96,0.15)] text-[#8a8fa8] hover:border-[rgba(255,32,96,0.3)] hover:text-[#f8f8f0] transition-colors"
+                className="font-inter text-sm px-3 py-1.5 border border-[rgba(149,254,124,0.15)] text-[#8a8fa8] hover:border-[rgba(149,254,124,0.3)] hover:text-[#f8f8f0] transition-colors"
               >
                 {b}
               </span>
@@ -272,7 +257,7 @@ export default function About() {
                 transition={{ duration: 0.4, delay: i * 0.06 }}
                 className="card card-corner group p-4"
               >
-                <span className="font-rajdhani font-bold text-sm text-[#f8f8f0] group-hover:text-[#ff2060] transition-colors block mb-1">
+                <span className="font-rajdhani font-bold text-sm text-[#f8f8f0] group-hover:text-[#95fe7c] transition-colors block mb-1">
                   {p.name}
                 </span>
                 <span className="text-xs font-inter text-[#4a4f62]">{p.handle}</span>
@@ -287,7 +272,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center pt-12 border-t border-[rgba(255,32,96,0.08)]"
+          className="text-center pt-12 border-t border-[rgba(149,254,124,0.08)]"
         >
           <h3 className="font-rajdhani font-bold text-[#f8f8f0] text-3xl mb-4">
             Ready to work together?
@@ -297,7 +282,7 @@ export default function About() {
           </p>
           <Link
             href="/services"
-            className="inline-block font-rajdhani font-bold text-base uppercase tracking-widest px-10 py-4 bg-[#ff2060] text-[#08090f] hover:opacity-90 transition-opacity"
+            className="inline-block font-rajdhani font-bold text-base uppercase tracking-widest px-10 py-4 bg-[#95fe7c] text-[#08090f] hover:opacity-90 transition-opacity"
           >
             See Services + Pricing
           </Link>
