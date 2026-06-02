@@ -243,8 +243,8 @@ export default function Work() {
       <div className="noise" />
 
       {/* Ambient glow */}
-      <div className="absolute top-24 left-1/3 w-[500px] h-[300px] rounded-full bg-[#95fe7c]/4 blur-3xl pointer-events-none" />
-      <div className="absolute top-[60vh] right-0 w-80 h-80 rounded-full bg-[#95fe7c]/3 blur-3xl pointer-events-none" />
+      <div className="absolute top-24 left-1/3 w-[500px] h-[300px] rounded-full bg-[#ff2060]/4 blur-3xl pointer-events-none" />
+      <div className="absolute top-[60vh] right-0 w-80 h-80 rounded-full bg-[#ff2060]/3 blur-3xl pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative">
 
@@ -287,16 +287,16 @@ export default function Work() {
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
                 <div className="min-w-0">
                   <div className="flex flex-wrap items-center gap-3 mb-2">
-                    <span className="font-rajdhani font-bold text-[10px] uppercase tracking-widest text-[#95fe7c] border border-[rgba(149,254,124,0.3)] px-2 py-0.5">
+                    <span className="font-rajdhani font-bold text-[10px] uppercase tracking-widest text-[#ff2060] border border-[rgba(255,32,96,0.3)] px-2 py-0.5">
                       {p.category}
                     </span>
                     <span className="font-inter text-xs text-[#4a4f62]">{p.year}</span>
                     <span className="flex items-center gap-1.5 font-inter text-xs text-[#4a4f62]">
-                      <span className={`w-1 h-1 rounded-full ${p.live ? "bg-[#95fe7c] animate-pulse-dot" : "bg-[#4a4f62]"}`} />
+                      <span className={`w-1 h-1 rounded-full ${p.live ? "bg-[#ff2060] animate-pulse-dot" : "bg-[#4a4f62]"}`} />
                       {p.status}
                     </span>
                   </div>
-                  <h2 className="font-rajdhani font-bold text-[#f8f8f0] text-2xl md:text-3xl group-hover:text-[#95fe7c] transition-colors mb-1 break-words">
+                  <h2 className="font-rajdhani font-bold text-[#f8f8f0] text-2xl md:text-3xl group-hover:text-[#ff2060] transition-colors mb-1 break-words">
                     {p.label}
                   </h2>
                   <p className="text-xs font-inter text-[#8a8fa8]">{p.tag}</p>
@@ -305,14 +305,14 @@ export default function Work() {
                   href={p.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="self-start shrink-0 font-rajdhani font-bold text-xs uppercase tracking-wider px-4 py-2 border border-[rgba(149,254,124,0.2)] text-[#8a8fa8] hover:border-[#95fe7c] hover:text-[#95fe7c] transition-colors whitespace-nowrap"
+                  className="self-start shrink-0 font-rajdhani font-bold text-xs uppercase tracking-wider px-4 py-2 border border-[rgba(255,32,96,0.2)] text-[#8a8fa8] hover:border-[#ff2060] hover:text-[#ff2060] transition-colors whitespace-nowrap"
                 >
                   Visit →
                 </a>
               </div>
 
               {/* Stats */}
-              <div className="grid grid-cols-3 gap-4 mb-6 pb-6 border-b border-[rgba(149,254,124,0.06)]">
+              <div className="grid grid-cols-3 gap-4 mb-6 pb-6 border-b border-[rgba(255,32,96,0.06)]">
                 {p.stats.map((s) => (
                   <div key={s.label}>
                     <span className="stat-num text-lg md:text-xl block leading-tight">
@@ -326,7 +326,7 @@ export default function Work() {
               {/* Body */}
               <div className="grid md:grid-cols-[2fr_1fr] gap-6">
                 <div>
-                  <span className="text-[10px] font-inter uppercase tracking-widest text-[#95fe7c] block mb-2">
+                  <span className="text-[10px] font-inter uppercase tracking-widest text-[#ff2060] block mb-2">
                     What it is
                   </span>
                   <p className="text-sm font-inter text-[#8a8fa8] leading-relaxed">{p.desc}</p>
@@ -336,18 +336,18 @@ export default function Work() {
                 </div>
                 <div>
                   <div className="mb-4">
-                    <span className="text-[10px] font-inter uppercase tracking-widest text-[#95fe7c] block mb-2">
+                    <span className="text-[10px] font-inter uppercase tracking-widest text-[#ff2060] block mb-2">
                       My role
                     </span>
                     <p className="text-sm font-inter text-[#8a8fa8]">{p.role}</p>
                   </div>
                   <div>
-                    <span className="text-[10px] font-inter uppercase tracking-widest text-[#95fe7c] block mb-2">
+                    <span className="text-[10px] font-inter uppercase tracking-widest text-[#ff2060] block mb-2">
                       Stack
                     </span>
                     <div className="flex flex-wrap gap-1.5">
                       {p.tech.map((t) => (
-                        <span key={t} className="text-[10px] font-inter text-[#4a4f62] border border-[rgba(149,254,124,0.08)] px-2 py-0.5 hover:border-[rgba(149,254,124,0.2)] transition-colors">
+                        <span key={t} className="text-[10px] font-inter text-[#4a4f62] border border-[rgba(255,32,96,0.08)] px-2 py-0.5 hover:border-[rgba(255,32,96,0.2)] transition-colors">
                           {t}
                         </span>
                       ))}
@@ -384,7 +384,7 @@ export default function Work() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
-                className="p-4 border border-[rgba(149,254,124,0.08)] bg-[#08090f]/60 hover:border-[rgba(149,254,124,0.2)] hover:bg-[#08090f]/90 transition-all"
+                className="p-4 border border-[rgba(255,32,96,0.08)] bg-[#08090f]/60 hover:border-[rgba(255,32,96,0.2)] hover:bg-[#08090f]/90 transition-all"
               >
                 <span className="font-rajdhani font-bold text-[#f8f8f0] text-sm block mb-1">{t.name}</span>
                 <span className="text-xs font-inter text-[#4a4f62] leading-relaxed">{t.verdict}</span>
