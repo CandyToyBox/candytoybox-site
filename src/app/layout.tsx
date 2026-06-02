@@ -61,7 +61,7 @@ export default function RootLayout({
         <Nav />
         <div className="flex">
           <div className="hidden md:block w-14 flex-shrink-0" aria-hidden="true" />
-          <div className="flex-1 min-w-0">
+          <div className="flex-1 min-w-0 md:pr-14">
             <main>{children}</main>
             <Footer />
           </div>

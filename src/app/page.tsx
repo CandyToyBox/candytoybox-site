@@ -74,66 +74,40 @@ const chatgptStats = [
 ];
 
 function WorkCardVisual({ id }: { id: string }) {
-  if (id === "zao") {
-    return (
-      <Image
-        src="/images/zao-chella-event.jpg"
-        alt="ZAO-CHELLA Miami Art Basel 2024"
-        fill
-        className="object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-700"
-        sizes="(max-width: 768px) 100vw, 50vw"
-      />
-    );
-  }
   if (id === "wavewarz") {
     return (
-      <div className="absolute inset-0 bg-[#06080e]">
-        {/* Soundwave bars */}
-        <div className="absolute inset-0 flex items-center justify-center gap-[3px] px-8">
-          {[20,35,60,45,80,55,90,70,45,60,35,50,75,40,65,30,50,85,40,70,55,30,65,45,80].map((h, i) => (
-            <div
-              key={i}
-              className="bg-[#95fe7c]/15 rounded-sm flex-shrink-0"
-              style={{ width: "3px", height: `${h}%` }}
-            />
-          ))}
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-[#95fe7c]/5 to-transparent" />
-        <div className="absolute top-6 left-6 text-[#95fe7c]/10 font-rajdhani font-bold text-6xl leading-none select-none">
-          SOL
-        </div>
-      </div>
+      <>
+        <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
+          <source src="/videos/wavewarz-preview.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#08090f]/60 to-transparent" />
+      </>
     );
   }
   if (id === "nft-press") {
     return (
-      <div className="absolute inset-0 bg-[#070a10]">
-        {/* Newspaper grid lines */}
-        <div className="absolute inset-0" style={{
-          backgroundImage: "linear-gradient(rgba(149,254,124,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(149,254,124,0.04) 1px, transparent 1px)",
-          backgroundSize: "24px 24px"
-        }} />
-        {/* Column text blocks */}
-        <div className="absolute inset-6 flex gap-3">
-          {[0.6, 1, 0.8].map((opacity, i) => (
-            <div key={i} className="flex-1 flex flex-col gap-1.5">
-              {Array.from({ length: 8 }).map((_, j) => (
-                <div key={j} className="bg-[#95fe7c]/8 rounded-[1px]" style={{ height: "6px", opacity: opacity - j * 0.06 }} />
-              ))}
-            </div>
-          ))}
-        </div>
-        <div className="absolute top-6 left-6 text-[#95fe7c]/8 font-rajdhani font-bold text-5xl leading-none select-none">
-          PRESS
-        </div>
-      </div>
+      <>
+        <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
+          <source src="/videos/nft-press-preview.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#08090f]/50 to-transparent" />
+      </>
     );
   }
-  // agents
+  if (id === "zao") {
+    return (
+      <>
+        <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
+          <source src="/videos/zao-chella-preview.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#08090f]/70 via-transparent to-transparent" />
+      </>
+    );
+  }
+  // agents — keep CSS
   return (
     <div className="absolute inset-0 bg-[#060910]">
-      {/* Node network */}
-      <svg className="absolute inset-0 w-full h-full opacity-15" viewBox="0 0 400 300">
+      <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 400 300">
         <line x1="200" y1="150" x2="80" y2="80" stroke="#95fe7c" strokeWidth="1" />
         <line x1="200" y1="150" x2="320" y2="80" stroke="#95fe7c" strokeWidth="1" />
         <line x1="200" y1="150" x2="80" y2="220" stroke="#95fe7c" strokeWidth="1" />

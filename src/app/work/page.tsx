@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import WorkProjectVisual from "@/components/WorkProjectVisual";
 
 const projects = [
   {
@@ -46,7 +47,7 @@ const projects = [
     tag: "Web3 Music Event · Miami Art Basel",
     role: "Co-Founder · All Visual Identity · Event Brand",
     status: "Completed",
-    url: "https://zaofestivals.com",
+    url: "https://zaochella.carrd.co",
     stats: [
       { value: "53", label: "projects featured" },
       { value: "26", label: "sponsors secured" },
@@ -65,7 +66,7 @@ const projects = [
     tag: "Web3 Music Event · NFT NYC",
     role: "Co-Founder · All Visual Identity · Event Brand",
     status: "Completed",
-    url: "https://zaofestivals.com",
+    url: "https://zaopalooza.carrd.co",
     stats: [
       { value: "300–400", label: "attendees" },
       { value: "20", label: "Web3 artists performing" },
@@ -126,7 +127,7 @@ const projects = [
       { value: "Sub-accounts", label: "spend limits + task-based payments" },
       { value: "Base L2", label: "USDC" },
     ],
-    desc: "Allowance app built on Coinbase's CDP SDK within 24 hours of its public release. Sub-accounts, spend limits, task-based payment gating. Real-world UX testing for family finance on Base.",
+    desc: "Smart wallet allowance app for families built on Coinbase CDP SDK within 24 hours of its release. Parents assign tasks, kids photograph completion, parent approves and money sends automatically — photos deleted immediately for privacy. Spending limits enforced at the contract level on Base L2.",
     tech: ["Coinbase CDP SDK", "Base L2", "USDC", "React"],
     category: "Hackathon",
     live: false,
@@ -166,6 +167,60 @@ const projects = [
     tech: ["Canva", "Gooten", "Printful", "Etsy", "TPT"],
     category: "E-Commerce",
     live: true,
+  },
+  {
+    id: "student-loanz",
+    label: "Student $LOANZ",
+    year: "2024",
+    tag: "Purpose-Driven Movement · Base Blockchain",
+    role: "Founder · Design · Copy · Strategy",
+    status: "Live · studentloanz.xyz",
+    url: "https://studentloanz.carrd.co",
+    stats: [
+      { value: "$1.7T", label: "US student debt — the problem" },
+      { value: "Base", label: "DeFi yield solution onchain" },
+      { value: "$LOANZ", label: "fair-launch token" },
+    ],
+    desc: "Purpose-driven movement to bring education finance onchain. $1.7 trillion in student debt — the goal is to end it, not just talk about it. Uses DeFi yield strategies to accelerate repayment timelines, a community petition, and $LOANZ token on Base. Connects the Web3 music community to a real-world financial problem. 'Make the biggest meme in America a force for real change.'",
+    tech: ["Base", "Carrd", "DeFi", "Community"],
+    category: "Movement",
+    live: true,
+  },
+  {
+    id: "mayo",
+    label: "$MAYO",
+    year: "2024",
+    tag: "Cinco de Mayo · Fair-Launch Memecoin",
+    role: "Founder · Creative Director · Copywriter",
+    status: "Live",
+    url: "https://5thofmayo.carrd.co",
+    stats: [
+      { value: "5", label: "characters — Hot, Extra, Spicy, Mild, Fruits" },
+      { value: "Fair launch", label: "on blockchain" },
+      { value: "Cinco", label: "de Mayo · community experiment" },
+    ],
+    desc: "Cinco de Mayo fair-launch memecoin built around a full narrative: five jars of mayo with distinct personalities meet at a bar on Cinco de Mayo and decide to spread joy across the blockchain. Built to prove that storytelling + meme culture can create genuine community momentum. Every word of the lore was written by me. 'Spread the Joy!'",
+    tech: ["Blockchain", "Carrd", "Copywriting", "Meme Culture"],
+    category: "Memecoin",
+    live: true,
+  },
+  {
+    id: "detroit-deco",
+    label: "Detroit Deco",
+    year: "2019–2023",
+    tag: "DIY Blog · YouTube · Creator Era",
+    role: "Founder · Writer · Maker",
+    status: "Archive · Still online",
+    url: "https://detroitdeco.wordpress.com",
+    stats: [
+      { value: "160", label: "YouTube videos on @CandyToyBox" },
+      { value: "DIY", label: "pallet furniture · farmhouse · sewing" },
+      { value: "2019", label: "where Candy started building in public" },
+    ],
+    desc: "Detroit Deco was the first public proof that I build things. A DIY blog covering pallet furniture, farmhouse signs, sewing, and home makeovers — paired with a YouTube channel (@CandyToyBox, 160 videos). Everything written and filmed by me. This is where the instinct to document, ship, and share in public started, years before Web3.",
+    tech: ["WordPress", "YouTube", "Canva", "DIY"],
+    category: "Creator",
+    live: false,
   },
 ];
 
@@ -221,8 +276,13 @@ export default function Work() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.6, delay: Math.min(i * 0.04, 0.2) }}
-              className="card card-corner group p-6 md:p-8"
+              className="card card-corner group overflow-hidden"
             >
+              {/* Project visual header */}
+              <WorkProjectVisual id={p.id} />
+
+              {/* Content body */}
+              <div className="p-6 md:p-8">
               {/* Header row */}
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
                 <div className="min-w-0">
@@ -295,6 +355,7 @@ export default function Work() {
                   </div>
                 </div>
               </div>
+              </div>{/* end content body */}
             </motion.article>
           ))}
         </div>
