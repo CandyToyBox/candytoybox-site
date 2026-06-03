@@ -34,7 +34,7 @@ export default function AnimatedStat({ value, suffix = "", prefix = "", label }:
 
   return (
     <div ref={ref} className="flex flex-col gap-1">
-      <span className="font-rajdhani font-bold text-[#ff2060] text-4xl md:text-5xl leading-none">
+      <span className="font-rajdhani font-bold text-[#95fe7c] text-4xl md:text-5xl leading-none">
         {prefix}{count.toLocaleString()}{suffix}
       </span>
       <span className="text-[#8a8fa8] text-sm font-inter">{label}</span>

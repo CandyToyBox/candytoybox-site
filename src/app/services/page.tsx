@@ -98,8 +98,8 @@ export default function Services() {
       <div className="noise" />
 
       {/* Ambient glow */}
-      <div className="absolute top-24 right-0 w-[500px] h-[400px] rounded-full bg-[#ff2060]/4 blur-3xl pointer-events-none" />
-      <div className="absolute top-80 left-0 w-72 h-72 rounded-full bg-[#ff2060]/3 blur-3xl pointer-events-none" />
+      <div className="absolute top-24 right-0 w-[500px] h-[400px] rounded-full bg-[#95fe7c]/4 blur-3xl pointer-events-none" />
+      <div className="absolute top-80 left-0 w-72 h-72 rounded-full bg-[#95fe7c]/3 blur-3xl pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative">
 
@@ -133,7 +133,7 @@ export default function Services() {
           >
             <div className="flex items-center gap-3 mb-2">
               <span className="label">Tier 1</span>
-              <span className="h-px flex-1 bg-gradient-to-r from-[rgba(255,32,96,0.3)] to-transparent" />
+              <span className="h-px flex-1 bg-gradient-to-r from-[rgba(149,254,124,0.3)] to-transparent" />
             </div>
             <h2
               className="font-rajdhani font-bold text-[#f8f8f0] leading-tight"
@@ -164,10 +164,10 @@ export default function Services() {
                     </span>
                   </div>
                   <div className="flex items-center gap-4 shrink-0">
-                    <span className="font-rajdhani font-bold text-[#ff2060] text-2xl text-glow-sm">{s.price}</span>
+                    <span className="font-rajdhani font-bold text-[#95fe7c] text-2xl text-glow-sm">{s.price}</span>
                     <Link
                       href="/contact"
-                      className="font-rajdhani font-bold text-sm uppercase tracking-wider px-5 py-2 bg-[#ff2060] text-[#08090f] hover:opacity-90 transition-opacity whitespace-nowrap"
+                      className="font-rajdhani font-bold text-sm uppercase tracking-wider px-5 py-2 bg-[#95fe7c] text-[#08090f] hover:opacity-90 transition-opacity whitespace-nowrap"
                     >
                       Order →
                     </Link>
@@ -176,15 +176,15 @@ export default function Services() {
 
                 <div className="grid md:grid-cols-3 gap-5">
                   <div>
-                    <span className="text-[10px] font-inter uppercase tracking-widest text-[#ff2060] block mb-2">What you get</span>
+                    <span className="text-[10px] font-inter uppercase tracking-widest text-[#95fe7c] block mb-2">What you get</span>
                     <p className="text-sm font-inter text-[#8a8fa8] leading-relaxed">{s.what}</p>
                   </div>
                   <div>
-                    <span className="text-[10px] font-inter uppercase tracking-widest text-[#ff2060] block mb-2">Good for</span>
+                    <span className="text-[10px] font-inter uppercase tracking-widest text-[#95fe7c] block mb-2">Good for</span>
                     <p className="text-sm font-inter text-[#8a8fa8] leading-relaxed">{s.goodFor}</p>
                   </div>
                   <div>
-                    <span className="text-[10px] font-inter uppercase tracking-widest text-[#ff2060] block mb-2">Deliverable</span>
+                    <span className="text-[10px] font-inter uppercase tracking-widest text-[#95fe7c] block mb-2">Deliverable</span>
                     <p className="text-sm font-inter text-[#8a8fa8] leading-relaxed">{s.deliverable}</p>
                   </div>
                 </div>
@@ -204,7 +204,7 @@ export default function Services() {
           >
             <div className="flex items-center gap-3 mb-2">
               <span className="label">Tier 2</span>
-              <span className="h-px flex-1 bg-gradient-to-r from-[rgba(255,32,96,0.3)] to-transparent" />
+              <span className="h-px flex-1 bg-gradient-to-r from-[rgba(149,254,124,0.3)] to-transparent" />
             </div>
             <h2
               className="font-rajdhani font-bold text-[#f8f8f0] leading-tight"
@@ -230,18 +230,18 @@ export default function Services() {
                 <div className="mb-4">
                   <h3 className="font-rajdhani font-bold text-[#f8f8f0] text-xl mb-1">{s.name}</h3>
                   <div className="flex items-baseline gap-1">
-                    <span className="font-rajdhani font-bold text-[#ff2060] text-2xl text-glow-sm">{s.price}</span>
+                    <span className="font-rajdhani font-bold text-[#95fe7c] text-2xl text-glow-sm">{s.price}</span>
                     <span className="text-xs font-inter text-[#4a4f62]">{s.unit}</span>
                   </div>
                 </div>
                 <p className="text-sm font-inter text-[#8a8fa8] leading-relaxed flex-1 mb-6">{s.what}</p>
                 <div className="mb-5">
-                  <span className="text-[10px] font-inter uppercase tracking-widest text-[#ff2060] block mb-1">Format</span>
+                  <span className="text-[10px] font-inter uppercase tracking-widest text-[#95fe7c] block mb-1">Format</span>
                   <p className="text-xs font-inter text-[#4a4f62]">{s.format}</p>
                 </div>
                 <Link
                   href="/contact"
-                  className="font-rajdhani font-bold text-sm uppercase tracking-wider text-center px-4 py-2.5 border border-[rgba(255,32,96,0.3)] text-[#f8f8f0] hover:border-[#ff2060] hover:text-[#ff2060] transition-colors"
+                  className="font-rajdhani font-bold text-sm uppercase tracking-wider text-center px-4 py-2.5 border border-[rgba(149,254,124,0.3)] text-[#f8f8f0] hover:border-[#95fe7c] hover:text-[#95fe7c] transition-colors"
                 >
                   Book a Session →
                 </Link>
@@ -261,7 +261,7 @@ export default function Services() {
           >
             <div className="flex items-center gap-3 mb-2">
               <span className="label">Tier 3</span>
-              <span className="h-px flex-1 bg-gradient-to-r from-[rgba(255,32,96,0.3)] to-transparent" />
+              <span className="h-px flex-1 bg-gradient-to-r from-[rgba(149,254,124,0.3)] to-transparent" />
             </div>
             <h2
               className="font-rajdhani font-bold text-[#f8f8f0] leading-tight"
@@ -287,10 +287,10 @@ export default function Services() {
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-5">
                   <h3 className="font-rajdhani font-bold text-[#f8f8f0] text-xl">{s.name}</h3>
                   <div className="flex items-center gap-4 shrink-0">
-                    <span className="font-rajdhani font-bold text-[#ff2060] text-xl whitespace-nowrap text-glow-sm">{s.price}</span>
+                    <span className="font-rajdhani font-bold text-[#95fe7c] text-xl whitespace-nowrap text-glow-sm">{s.price}</span>
                     <Link
                       href="/contact"
-                      className="font-rajdhani font-bold text-sm uppercase tracking-wider px-5 py-2 border border-[rgba(255,32,96,0.3)] text-[#f8f8f0] hover:border-[#ff2060] hover:text-[#ff2060] transition-colors whitespace-nowrap"
+                      className="font-rajdhani font-bold text-sm uppercase tracking-wider px-5 py-2 border border-[rgba(149,254,124,0.3)] text-[#f8f8f0] hover:border-[#95fe7c] hover:text-[#95fe7c] transition-colors whitespace-nowrap"
                     >
                       Let&apos;s scope it →
                     </Link>
@@ -298,11 +298,11 @@ export default function Services() {
                 </div>
                 <div className="grid md:grid-cols-2 gap-5">
                   <div>
-                    <span className="text-[10px] font-inter uppercase tracking-widest text-[#ff2060] block mb-2">What&apos;s included</span>
+                    <span className="text-[10px] font-inter uppercase tracking-widest text-[#95fe7c] block mb-2">What&apos;s included</span>
                     <p className="text-sm font-inter text-[#8a8fa8] leading-relaxed">{s.what}</p>
                   </div>
                   <div>
-                    <span className="text-[10px] font-inter uppercase tracking-widest text-[#ff2060] block mb-2">Proof of work</span>
+                    <span className="text-[10px] font-inter uppercase tracking-widest text-[#95fe7c] block mb-2">Proof of work</span>
                     <p className="text-sm font-inter text-[#8a8fa8] leading-relaxed">{s.proof}</p>
                   </div>
                 </div>
@@ -319,14 +319,14 @@ export default function Services() {
           transition={{ duration: 0.6 }}
           className="mb-24"
         >
-          <div className="card card-corner box-glow p-8 border-[rgba(255,32,96,0.25)]" style={{ borderColor: "rgba(255,32,96,0.2)" }}>
+          <div className="card card-corner box-glow p-8 border-[rgba(149,254,124,0.25)]" style={{ borderColor: "rgba(149,254,124,0.2)" }}>
             <div className="flex items-center gap-3 mb-6">
               <span className="label">Agentic Economy</span>
-              <span className="h-px flex-1 bg-gradient-to-r from-[rgba(255,32,96,0.4)] to-transparent" />
+              <span className="h-px flex-1 bg-gradient-to-r from-[rgba(149,254,124,0.4)] to-transparent" />
               {/* Pulse indicator */}
               <span className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#ff2060] animate-pulse-dot" />
-                <span className="text-[10px] font-inter text-[#ff2060] uppercase tracking-widest">Live</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#95fe7c] animate-pulse-dot" />
+                <span className="text-[10px] font-inter text-[#95fe7c] uppercase tracking-widest">Live</span>
               </span>
             </div>
             <h2
@@ -340,10 +340,10 @@ export default function Services() {
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <div>
-                <span className="font-rajdhani font-bold text-[#ff2060] text-xl text-glow-sm">$0.50 USDC</span>
+                <span className="font-rajdhani font-bold text-[#95fe7c] text-xl text-glow-sm">$0.50 USDC</span>
                 <span className="text-xs font-inter text-[#4a4f62] ml-2">per request · Base mainnet · x402</span>
               </div>
-              <code className="text-xs font-inter text-[#ff2060]/60 bg-[#08090f] px-4 py-2 border border-[rgba(255,32,96,0.12)]">
+              <code className="text-xs font-inter text-[#95fe7c]/60 bg-[#08090f] px-4 py-2 border border-[rgba(149,254,124,0.12)]">
                 POST /api/contact-x402
               </code>
             </div>
@@ -370,7 +370,7 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center pt-12 border-t border-[rgba(255,32,96,0.08)]"
+          className="text-center pt-12 border-t border-[rgba(149,254,124,0.08)]"
         >
           <h3 className="font-rajdhani font-bold text-[#f8f8f0] text-3xl mb-4">
             Not sure which tier fits?
@@ -380,7 +380,7 @@ export default function Services() {
           </p>
           <Link
             href="/contact"
-            className="inline-block font-rajdhani font-bold text-base uppercase tracking-widest px-10 py-4 bg-[#ff2060] text-[#08090f] hover:opacity-90 transition-opacity"
+            className="inline-block font-rajdhani font-bold text-base uppercase tracking-widest px-10 py-4 bg-[#95fe7c] text-[#08090f] hover:opacity-90 transition-opacity"
           >
             Get in Touch
           </Link>
